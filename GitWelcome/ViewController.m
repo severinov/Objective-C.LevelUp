@@ -12,6 +12,8 @@
     [super viewDidLoad];
 	// Hello, viewDidLoad
     // I'm X-Coder
+    // babich test
+    //newBranch
 }
 //asdasd
 - (void)didReceiveMemoryWarning

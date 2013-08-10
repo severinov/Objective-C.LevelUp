@@ -13,7 +13,7 @@
 	// Hello, viewDidLoad
     // I'm X-Coder
 }
-//asdasd
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

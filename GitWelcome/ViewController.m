@@ -21,7 +21,7 @@
     {
         if ([digit isEqualToString:@"0"])
             return; //Several zero at begining is not allowed
-        else if ([digit isEqualToString:@"."])
+        else if ([digit isEqualToString:@"."]) //Zero before point. 
         {
             self.display.text = [self.display.text stringByAppendingString:digit];
             return;

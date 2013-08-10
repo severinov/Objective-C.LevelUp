@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F98FAD917B6DEC800D9BCD7 /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F98FAD817B6DEC800D9BCD7 /* CalculatorBrain.m */; };
 		A829A8B717B2B69C002222D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A829A8B617B2B69C002222D3 /* UIKit.framework */; };
 		A829A8B917B2B69C002222D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A829A8B817B2B69C002222D3 /* Foundation.framework */; };
 		A829A8BB17B2B69C002222D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A829A8BA17B2B69C002222D3 /* CoreGraphics.framework */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F98FAD717B6DEC800D9BCD7 /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
+		8F98FAD817B6DEC800D9BCD7 /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
 		A829A8B317B2B69C002222D3 /* GitWelcome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitWelcome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A829A8B617B2B69C002222D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A829A8B817B2B69C002222D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,6 +89,8 @@
 				A829A8C517B2B69C002222D3 /* AppDelegate.h */,
 				A829A8C617B2B69C002222D3 /* AppDelegate.m */,
 				A829A8CE17B2B69C002222D3 /* MainStoryboard.storyboard */,
+				8F98FAD717B6DEC800D9BCD7 /* CalculatorBrain.h */,
+				8F98FAD817B6DEC800D9BCD7 /* CalculatorBrain.m */,
 				A829A8D117B2B69C002222D3 /* ViewController.h */,
 				A829A8D217B2B69C002222D3 /* ViewController.m */,
 				A829A8BD17B2B69C002222D3 /* Supporting Files */,
@@ -176,6 +181,7 @@
 				A829A8C317B2B69C002222D3 /* main.m in Sources */,
 				A829A8C717B2B69C002222D3 /* AppDelegate.m in Sources */,
 				A829A8D317B2B69C002222D3 /* ViewController.m in Sources */,
+				8F98FAD917B6DEC800D9BCD7 /* CalculatorBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +304,7 @@
 				A829A8D817B2B69C002222D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

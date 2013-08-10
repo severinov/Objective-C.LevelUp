@@ -1,23 +1,49 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-//dasdasd
+@interface ViewController()
+@property (nonatomic) BOOL areWeInTheMiddleOfEnteringNumber;
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
+@synthesize display = _display;
+
+- (IBAction)digitPressed:(id)sender
 {
-    [super viewDidLoad];
-	// Hello, viewDidLoad
-    // I'm X-Coder
+    NSLog(@"digit pressed = %@", [sender currentTitle]);
+    
+    NSString *digit = [sender currentTitle];
+    
+    if (self.areWeInTheMiddleOfEnteringNumber)
+        self.display.text = [self.display.text stringByAppendingString:digit];
+    else
+    {
+        if ([digit isEqualToString:@"0"])
+            return; //Several zero at begining is not allowed
+        else if ([digit isEqualToString:@"."])
+        {
+            self.display.text = [self.display.text stringByAppendingString:digit];
+            return;
+        }
+        else self.display.text = digit;
+        
+        self.areWeInTheMiddleOfEnteringNumber = YES;
+    }
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)operationPressed:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)enterPressed
+{
+}
+
+- (IBAction)clearPressed
+{
+    self.areWeInTheMiddleOfEnteringNumber = NO;
+    self.display.text = @"0";
 }
 
 @end

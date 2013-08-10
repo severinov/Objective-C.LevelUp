@@ -11,7 +11,29 @@
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="left" image="516858-2560x1600.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="RsM-rS-jKC"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" text="Вводите операцию" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="H61-EZ-pBx">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="oqu-VR-Nq3"/>
+                                </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numbersAndPunctuation"/>
+                                <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RsM-rS-jKC" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="2Kw-Fh-6dn"/>
+                            <constraint firstItem="RsM-rS-jKC" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Flv-2g-Zik"/>
+                            <constraint firstItem="H61-EZ-pBx" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Lhf-bS-9ow"/>
+                            <constraint firstItem="H61-EZ-pBx" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="NHm-hZ-sz9"/>
+                            <constraint firstItem="RsM-rS-jKC" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Ybc-dZ-wq3"/>
+                            <constraint firstItem="RsM-rS-jKC" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="aIO-fO-e2F"/>
+                            <constraint firstItem="H61-EZ-pBx" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="maC-9w-h4i"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -19,14 +41,15 @@
             <point key="canvasLocation" x="97" y="8"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="516858-2560x1600.jpg" width="2560" height="1600"/>
+    </resources>
     <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="digitPressed:"/>
-                <relationship kind="action" name="operationPressed:"/>
-                <relationship kind="outlet" name="display" candidateClass="UILabel"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

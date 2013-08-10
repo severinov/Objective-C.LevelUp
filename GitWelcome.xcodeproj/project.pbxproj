@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F98FAD917B6DEC800D9BCD7 /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F98FAD817B6DEC800D9BCD7 /* CalculatorBrain.m */; };
 		A829A8B717B2B69C002222D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A829A8B617B2B69C002222D3 /* UIKit.framework */; };
 		A829A8B917B2B69C002222D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A829A8B817B2B69C002222D3 /* Foundation.framework */; };
 		A829A8BB17B2B69C002222D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A829A8BA17B2B69C002222D3 /* CoreGraphics.framework */; };
@@ -19,11 +18,10 @@
 		A829A8CD17B2B69C002222D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A829A8CC17B2B69C002222D3 /* Default-568h@2x.png */; };
 		A829A8D017B2B69C002222D3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A829A8CE17B2B69C002222D3 /* MainStoryboard.storyboard */; };
 		A829A8D317B2B69C002222D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A829A8D217B2B69C002222D3 /* ViewController.m */; };
+		A8480B9217B6E5E8006AFADC /* 516858-2560x1600.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8480B9117B6E5E8006AFADC /* 516858-2560x1600.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8F98FAD717B6DEC800D9BCD7 /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
-		8F98FAD817B6DEC800D9BCD7 /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
 		A829A8B317B2B69C002222D3 /* GitWelcome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitWelcome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A829A8B617B2B69C002222D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A829A8B817B2B69C002222D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -40,6 +38,7 @@
 		A829A8CF17B2B69C002222D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A829A8D117B2B69C002222D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A829A8D217B2B69C002222D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A8480B9117B6E5E8006AFADC /* 516858-2560x1600.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "516858-2560x1600.jpg"; path = "../../../../Pictures/516858-2560x1600.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +88,7 @@
 				A829A8C517B2B69C002222D3 /* AppDelegate.h */,
 				A829A8C617B2B69C002222D3 /* AppDelegate.m */,
 				A829A8CE17B2B69C002222D3 /* MainStoryboard.storyboard */,
-				8F98FAD717B6DEC800D9BCD7 /* CalculatorBrain.h */,
-				8F98FAD817B6DEC800D9BCD7 /* CalculatorBrain.m */,
+				A8480B9117B6E5E8006AFADC /* 516858-2560x1600.jpg */,
 				A829A8D117B2B69C002222D3 /* ViewController.h */,
 				A829A8D217B2B69C002222D3 /* ViewController.m */,
 				A829A8BD17B2B69C002222D3 /* Supporting Files */,
@@ -168,6 +166,7 @@
 				A829A8CB17B2B69C002222D3 /* Default@2x.png in Resources */,
 				A829A8CD17B2B69C002222D3 /* Default-568h@2x.png in Resources */,
 				A829A8D017B2B69C002222D3 /* MainStoryboard.storyboard in Resources */,
+				A8480B9217B6E5E8006AFADC /* 516858-2560x1600.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +180,6 @@
 				A829A8C317B2B69C002222D3 /* main.m in Sources */,
 				A829A8C717B2B69C002222D3 /* AppDelegate.m in Sources */,
 				A829A8D317B2B69C002222D3 /* ViewController.m in Sources */,
-				8F98FAD917B6DEC800D9BCD7 /* CalculatorBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

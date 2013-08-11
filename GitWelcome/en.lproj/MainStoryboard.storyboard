@@ -196,9 +196,6 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0P-Ky-Hdg">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="43" id="OLI-BI-SJH"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="*">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -279,6 +276,22 @@
                                     <action selector="clearPressed" destination="2" eventType="touchUpInside" id="DRt-GH-PfZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h00-za-MHa">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="43" id="9Vd-bN-jAV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="del">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="delPressed" destination="2" eventType="touchUpInside" id="klQ-eG-WCR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -296,10 +309,10 @@
                             <constraint firstItem="Dgy-wY-Wv7" firstAttribute="leading" secondItem="DHJ-4S-cFc" secondAttribute="leading" type="default" id="IHT-q5-Vp2"/>
                             <constraint firstItem="bv6-lJ-hAJ" firstAttribute="leading" secondItem="kyh-D4-pai" secondAttribute="leading" type="default" id="Iv7-VZ-QoA"/>
                             <constraint firstItem="Dgy-wY-Wv7" firstAttribute="trailing" secondItem="DHJ-4S-cFc" secondAttribute="trailing" type="default" id="JcO-Z1-FLb"/>
+                            <constraint firstItem="h00-za-MHa" firstAttribute="trailing" secondItem="n0P-Ky-Hdg" secondAttribute="trailing" type="default" id="Jg1-yO-5wf"/>
                             <constraint firstItem="Xn0-j2-v8S" firstAttribute="baseline" secondItem="JPI-fS-TRq" secondAttribute="baseline" type="default" id="JyL-aA-14T"/>
                             <constraint firstItem="qzK-HR-duL" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="KbP-Tt-geu"/>
                             <constraint firstItem="aug-9n-BAK" firstAttribute="leading" secondItem="0Kc-VS-sCk" secondAttribute="leading" type="default" id="NBf-Ne-uOf"/>
-                            <constraint firstItem="bv6-lJ-hAJ" firstAttribute="trailing" secondItem="kyh-D4-pai" secondAttribute="trailing" type="default" id="OYD-NS-APp"/>
                             <constraint firstItem="qzK-HR-duL" firstAttribute="top" secondItem="SGd-jO-aFS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Q8O-5I-WMt"/>
                             <constraint firstItem="kyh-D4-pai" firstAttribute="leading" secondItem="0Kc-VS-sCk" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Qt5-Nc-D6G"/>
                             <constraint firstItem="RNd-In-Whb" firstAttribute="leading" secondItem="kyh-D4-pai" secondAttribute="leading" type="default" id="RrQ-dh-sYM"/>
@@ -322,6 +335,7 @@
                             <constraint firstItem="n0P-Ky-Hdg" firstAttribute="baseline" secondItem="kyh-D4-pai" secondAttribute="baseline" type="default" id="fve-Kz-MuY"/>
                             <constraint firstItem="RNd-In-Whb" firstAttribute="baseline" secondItem="aug-9n-BAK" secondAttribute="baseline" type="default" id="gd1-Db-gDP"/>
                             <constraint firstItem="0Kc-VS-sCk" firstAttribute="leading" secondItem="SGd-jO-aFS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="ge2-bo-owY"/>
+                            <constraint firstItem="h00-za-MHa" firstAttribute="baseline" secondItem="bv6-lJ-hAJ" secondAttribute="baseline" type="default" id="gvG-eP-qjQ"/>
                             <constraint firstItem="0Kc-VS-sCk" firstAttribute="baseline" secondItem="SGd-jO-aFS" secondAttribute="baseline" type="default" id="k60-fa-C0Y"/>
                             <constraint firstItem="DHJ-4S-cFc" firstAttribute="baseline" secondItem="Xn0-j2-v8S" secondAttribute="baseline" type="default" id="kaq-Rg-yfu"/>
                             <constraint firstItem="Xn0-j2-v8S" firstAttribute="leading" secondItem="RNd-In-Whb" secondAttribute="leading" type="default" id="la7-FG-zxt"/>
@@ -329,6 +343,7 @@
                             <constraint firstItem="RNd-In-Whb" firstAttribute="leading" secondItem="aug-9n-BAK" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="mv0-1l-d1f"/>
                             <constraint firstItem="g7O-9Y-rpS" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="nL4-el-rkP"/>
                             <constraint firstItem="Dgy-wY-Wv7" firstAttribute="leading" secondItem="RNd-In-Whb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nkx-fk-FzQ"/>
+                            <constraint firstItem="h00-za-MHa" firstAttribute="leading" secondItem="n0P-Ky-Hdg" secondAttribute="leading" type="default" id="ozS-wJ-9hz"/>
                             <constraint firstItem="DHJ-4S-cFc" firstAttribute="leading" secondItem="Xn0-j2-v8S" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="qsH-Ie-4je"/>
                             <constraint firstItem="kyh-D4-pai" firstAttribute="baseline" secondItem="0Kc-VS-sCk" secondAttribute="baseline" type="default" id="rmE-ID-Yuj"/>
                             <constraint firstItem="aug-9n-BAK" firstAttribute="leading" secondItem="qzK-HR-duL" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="sEm-Nl-Roc"/>
@@ -338,6 +353,7 @@
                             <constraint firstItem="n0P-Ky-Hdg" firstAttribute="leading" secondItem="kyh-D4-pai" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="t1j-MD-oso"/>
                             <constraint firstItem="JPI-fS-TRq" firstAttribute="leading" secondItem="aug-9n-BAK" secondAttribute="leading" type="default" id="xa1-9a-e9o"/>
                             <constraint firstItem="DHJ-4S-cFc" firstAttribute="trailing" secondItem="vFE-Lm-H7K" secondAttribute="trailing" type="default" id="yHp-et-cff"/>
+                            <constraint firstItem="h00-za-MHa" firstAttribute="leading" secondItem="bv6-lJ-hAJ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="ye4-ym-mPc"/>
                         </constraints>
                     </view>
                     <connections>

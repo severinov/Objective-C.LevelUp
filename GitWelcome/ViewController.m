@@ -27,6 +27,7 @@
         else if ([digit isEqualToString:@"."]) //Zero before point. 
         {
             self.display.text = [self.display.text stringByAppendingString:digit];
+            self.areWeInTheMiddleOfEnteringNumber = YES;
             return;
         }
         else self.display.text = digit;
@@ -35,17 +36,10 @@
     }
 }
 
-- (IBAction)operationPressed:(id)sender
-{
-    NSLog(@"operation pressed = %@", [sender currentTitle]);
-    
-    NSString *operation = [sender currentTitle];
-    
-    self.display.text = [self.display.text stringByAppendingString:operation];
-}
-
 - (IBAction)enterPressed
 {
+//    NSString *outputString = [[NSString alloc] init];
+//    NSMutableArray *operandStack = [[NSMutableArray alloc] init];
 
 }
 

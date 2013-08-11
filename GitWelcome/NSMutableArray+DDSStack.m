@@ -12,7 +12,8 @@
 
 -(void) push:(id)itemToPush
 {
-    [self addObject:itemToPush];
+    [self insertObject: itemToPush
+               atIndex:0];
 }
 
 -(id) pop

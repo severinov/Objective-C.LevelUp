@@ -38,9 +38,72 @@
 
 - (IBAction)enterPressed
 {
-//    NSString *outputString = [[NSString alloc] init];
-//    NSMutableArray *operandStack = [[NSMutableArray alloc] init];
+    NSMutableArray *outputStack = [[NSMutableArray alloc] init];
+    NSMutableArray *outputString = [[NSMutableArray alloc] init];
+    NSSet *digits = [[NSSet alloc] initWithObjects:@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @".", nil];
+    NSSet *lowPriorityOperands = [[NSSet alloc] initWithObjects:@"-", @"+", nil];
+    NSSet *normalPriorityOperands = [[NSSet alloc] initWithObjects:@"/", @"*", nil];
+    NSString *tempString = [[NSString alloc] init];
+    NSString *sourceString = [[NSString alloc] initWithString:[self.display.text stringByAppendingString:@"_"]];
+    
+    for (int i = 0; i < [sourceString length]; i++)
+    {
+        NSString *currentCharacter = [[NSString alloc] initWithFormat:@"%c", [sourceString characterAtIndex:i]];
+        
+        if ([digits containsObject:currentCharacter])
+        {
+            tempString = [tempString stringByAppendingString:currentCharacter];
+        }
+        
+        if ( (([normalPriorityOperands containsObject:currentCharacter]) ||
+              ([lowPriorityOperands containsObject:currentCharacter]) ||
+              ([currentCharacter isEqualToString:@"("]) ||
+              ([currentCharacter isEqualToString:@")"]) ||
+              (i == [sourceString length] - 1)) &&
+             (([tempString length] > 0)) )
+        {
+            [outputString addObject:[NSNumber numberWithFloat:[tempString floatValue]]];
+            tempString = @"";
+        }
+        
+        if ([currentCharacter isEqualToString:@"("])
+            [outputStack push:currentCharacter];
+        
+        if ([currentCharacter isEqualToString:@")"])
+        {
+            while (![[outputStack peek] isEqualToString:@"("])
+                [outputString addObject:[outputStack pop]];
+            [outputStack pop];
+        }
+        
+        if ([lowPriorityOperands containsObject:currentCharacter])
+        {
+            if ([outputStack count] > 0)
+                if (![[outputStack peek] isEqualToString:@"("])
+                    while ([lowPriorityOperands containsObject:[outputStack peek]])
+                    {
+                        [outputString addObject:[outputStack pop]];
+                    }
+            [outputStack push:currentCharacter];
+        }
+        
+        if ([normalPriorityOperands containsObject:currentCharacter])
+        {
+            if ([outputStack count] > 0)
+                if (![[outputStack peek] isEqualToString:@"("])
+                    while ([normalPriorityOperands containsObject:[outputStack peek]])
+                    {
+                        [outputString addObject:[outputStack pop]];
+                    }
+                [outputStack push:currentCharacter];
+        }
+    }
 
+    while ([outputStack count] > 0)
+        if (![[outputStack peek] isEqual:@"("])
+            [outputString addObject:[outputStack pop]];
+        else
+            [outputStack pop];
 }
 
 - (IBAction)clearPressed

@@ -48,6 +48,10 @@
 {
         [_stackOfDigits insertObject:result atIndex:index];
 }
+-(void)addResult:(id)result
+{
+    [_stackOfDigits addObject:result];
+}
 -(unichar)resultAtIndex:(NSUInteger)index
 {
     return [_stackOfResult characterAtIndex:index];

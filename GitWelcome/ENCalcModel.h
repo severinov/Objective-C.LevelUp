@@ -24,6 +24,7 @@
 -(id)operationAtIndex:(NSUInteger)index;
 
 -(void)insertResult:(id)result atIndex:(NSUInteger)index;
+-(void)addResult:(id)result;
 -(unichar)resultAtIndex:(NSUInteger)index;
 
 

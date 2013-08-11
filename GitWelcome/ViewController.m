@@ -25,7 +25,13 @@
 
 - (IBAction)buttonPressed:(id)sender
 {
-    [_controller readString: [_fieldExpression text]];
+    int state = [_controller readString: [_fieldExpression text]];
+    
+    //вывод ошибки если строка набрана неверно
+    if (state == -1)
+    {
+        [_labelResult setText:@"Error"];
+    }
 }
 - (void)viewDidUnload {
     [self setFieldExpression:nil];

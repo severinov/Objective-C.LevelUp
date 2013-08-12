@@ -14,6 +14,5 @@
 @property ENCalcModel * calcModel;
 
 -(int)readString:(NSString *)string;
-//-(void)constructResultString;
 
 @end

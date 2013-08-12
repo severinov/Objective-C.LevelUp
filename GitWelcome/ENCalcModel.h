@@ -11,21 +11,18 @@
 @interface ENCalcModel : NSObject
 
 
-@property NSMutableArray * stackOfDigits;
+@property NSMutableArray * stackOfResult;
 @property NSMutableArray * stackOfOperations;
-@property NSMutableString * stackOfResult;
 
 
 
--(void)insertDigit:(id)digit atIndex:(NSUInteger)index;
--(id)digitAtIndex:(NSUInteger)index;
+-(void)insertInResult:(id)digit atIndex:(NSUInteger)index;
+-(void)addInResult:(id)digit;
+-(id)digitAtIndexOfResult:(NSUInteger)index;
 
 -(void)insertOperation:(id)operation atIndex:(NSUInteger)index;
 -(id)operationAtIndex:(NSUInteger)index;
 
--(void)insertResult:(id)result atIndex:(NSUInteger)index;
--(void)addResult:(id)result;
--(unichar)resultAtIndex:(NSUInteger)index;
 
 
 

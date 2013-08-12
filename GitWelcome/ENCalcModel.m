@@ -16,47 +16,35 @@
 {
     self = [super init];
     if (self) {
-        _stackOfDigits      = [[NSMutableArray alloc] init];
+        _stackOfResult      = [[NSMutableArray alloc] init];
         _stackOfOperations  = [[NSMutableArray alloc] init];
-        _stackOfResult      = [[NSMutableString alloc] init];
     }
     return self;
 }
 
 
--(void)insertDigit:(id)digit atIndex:(NSUInteger)index
+-(void)insertInResult:(id)digit atIndex:(NSUInteger)index
 {
-    [_stackOfDigits insertObject:digit atIndex:index];
+    [_stackOfResult insertObject:digit atIndex:index];
 }
--(id)digitAtIndex:(NSUInteger)index
+-(void)addInResult:(id)digit
 {
-    return [_stackOfDigits objectAtIndex:index];
+    [_stackOfResult addObject:digit];
+}
+-(id)digitAtIndexOfResult:(NSUInteger)index
+{
+    return [_stackOfResult objectAtIndex:index];
 }
 
 
 -(void)insertOperation:(id)operation atIndex:(NSUInteger)index
 {
-    [_stackOfDigits insertObject:operation atIndex:index];
+    [_stackOfResult insertObject:operation atIndex:index];
 }
 -(id)operationAtIndex:(NSUInteger)index
 {
     return [_stackOfOperations objectAtIndex:index];
 }
-
-
--(void)insertResult:(id)result atIndex:(NSUInteger)index
-{
-        [_stackOfDigits insertObject:result atIndex:index];
-}
--(void)addResult:(id)result
-{
-    [_stackOfDigits addObject:result];
-}
--(unichar)resultAtIndex:(NSUInteger)index
-{
-    return [_stackOfResult characterAtIndex:index];
-}
-
 
 
 @end

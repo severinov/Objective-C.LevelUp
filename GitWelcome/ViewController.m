@@ -23,19 +23,102 @@
 }
 
 
-- (IBAction)buttonPressed:(id)sender
+
+- (void)viewDidUnload
 {
-    int state = [_controller readString: [_fieldExpression text]];
+    [self setFieldText:nil];
+
+}
+
+- (IBAction)button:(id)sender
+{
+}
+
+- (IBAction)buttonOne:(id)sender
+{
+}
+
+- (IBAction)buttonTwo:(id)sender
+{
     
-    //вывод ошибки если строка набрана неверно
-    if (state == -1)
-    {
-        [_labelResult setText:@"Error"];
-    }
 }
-- (void)viewDidUnload {
-    [self setFieldExpression:nil];
-    [self setLabelResult:nil];
-    [super viewDidUnload];
+- (IBAction)buttonThree:(id)sender
+{
+    
 }
+- (IBAction)buttonFour:(id)sender
+{
+    
+}
+- (IBAction)buttonFive:(id)sender
+{
+    
+}
+- (IBAction)buttonSix:(id)sender
+{
+    
+}
+- (IBAction)buttonSeven:(id)sender
+{
+    
+}
+- (IBAction)buttonEight:(id)sender
+{
+    
+}
+- (IBAction)buttonNine:(id)sender
+{
+    
+}
+- (IBAction)buttonZero:(id)sender
+{
+    
+}
+
+- (IBAction)buttonDot:(id)sender
+{
+    
+}
+- (IBAction)buttonEqual:(id)sender
+{
+    
+}
+- (IBAction)buttonClear:(id)sender
+{
+    [_fieldText setText:@""];
+    [_controller clear];
+}
+
+- (IBAction)buttonBraceOpen:(id)sender
+{
+    
+}
+- (IBAction)buttonBraceClose:(id)sender
+{
+    
+}
+- (IBAction)buttonPlus:(id)sender
+{
+    
+}
+- (IBAction)buttonSubstract:(id)sender
+{
+    
+}
+- (IBAction)buttonMultipy:(id)sender
+{
+    
+}
+- (IBAction)buttonDivide:(id)sender
+{
+    
+}
+- (IBAction)buttonPower:(id)sender
+{
+    
+}
+
+
+
+
 @end

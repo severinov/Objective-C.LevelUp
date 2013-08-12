@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116D65C517B867C100C831DE /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 116D65BC17B867C100C831DE /* ButtonView.m */; };
+		116D65C617B867C100C831DE /* LabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 116D65BE17B867C100C831DE /* LabelView.m */; };
+		116D65C717B867C100C831DE /* MaskView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 116D65C017B867C100C831DE /* MaskView1.m */; };
+		116D65C817B867C100C831DE /* MaskView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 116D65C217B867C100C831DE /* MaskView2.m */; };
+		116D65C917B867C100C831DE /* MaskView3.m in Sources */ = {isa = PBXBuildFile; fileRef = 116D65C417B867C100C831DE /* MaskView3.m */; };
 		A829A8B717B2B69C002222D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A829A8B617B2B69C002222D3 /* UIKit.framework */; };
 		A829A8B917B2B69C002222D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A829A8B817B2B69C002222D3 /* Foundation.framework */; };
 		A829A8BB17B2B69C002222D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A829A8BA17B2B69C002222D3 /* CoreGraphics.framework */; };
@@ -18,10 +23,19 @@
 		A829A8CD17B2B69C002222D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A829A8CC17B2B69C002222D3 /* Default-568h@2x.png */; };
 		A829A8D017B2B69C002222D3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A829A8CE17B2B69C002222D3 /* MainStoryboard.storyboard */; };
 		A829A8D317B2B69C002222D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A829A8D217B2B69C002222D3 /* ViewController.m */; };
-		A8480B9217B6E5E8006AFADC /* 516858-2560x1600.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8480B9117B6E5E8006AFADC /* 516858-2560x1600.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		116D65BB17B867C100C831DE /* ButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonView.h; sourceTree = "<group>"; };
+		116D65BC17B867C100C831DE /* ButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonView.m; sourceTree = "<group>"; };
+		116D65BD17B867C100C831DE /* LabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelView.h; sourceTree = "<group>"; };
+		116D65BE17B867C100C831DE /* LabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelView.m; sourceTree = "<group>"; };
+		116D65BF17B867C100C831DE /* MaskView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskView1.h; sourceTree = "<group>"; };
+		116D65C017B867C100C831DE /* MaskView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskView1.m; sourceTree = "<group>"; };
+		116D65C117B867C100C831DE /* MaskView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskView2.h; sourceTree = "<group>"; };
+		116D65C217B867C100C831DE /* MaskView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskView2.m; sourceTree = "<group>"; };
+		116D65C317B867C100C831DE /* MaskView3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskView3.h; sourceTree = "<group>"; };
+		116D65C417B867C100C831DE /* MaskView3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskView3.m; sourceTree = "<group>"; };
 		A829A8B317B2B69C002222D3 /* GitWelcome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitWelcome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A829A8B617B2B69C002222D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A829A8B817B2B69C002222D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,7 +52,6 @@
 		A829A8CF17B2B69C002222D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A829A8D117B2B69C002222D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A829A8D217B2B69C002222D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A8480B9117B6E5E8006AFADC /* 516858-2560x1600.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "516858-2560x1600.jpg"; path = "../../../../Pictures/516858-2560x1600.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +68,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		116D65CA17B867D000C831DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				116D65BB17B867C100C831DE /* ButtonView.h */,
+				116D65BC17B867C100C831DE /* ButtonView.m */,
+				116D65BD17B867C100C831DE /* LabelView.h */,
+				116D65BE17B867C100C831DE /* LabelView.m */,
+				116D65BF17B867C100C831DE /* MaskView1.h */,
+				116D65C017B867C100C831DE /* MaskView1.m */,
+				116D65C117B867C100C831DE /* MaskView2.h */,
+				116D65C217B867C100C831DE /* MaskView2.m */,
+				116D65C317B867C100C831DE /* MaskView3.h */,
+				116D65C417B867C100C831DE /* MaskView3.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		A829A8AA17B2B69C002222D3 = {
 			isa = PBXGroup;
 			children = (
@@ -85,10 +115,10 @@
 		A829A8BC17B2B69C002222D3 /* GitWelcome */ = {
 			isa = PBXGroup;
 			children = (
+				116D65CA17B867D000C831DE /* Views */,
 				A829A8C517B2B69C002222D3 /* AppDelegate.h */,
 				A829A8C617B2B69C002222D3 /* AppDelegate.m */,
 				A829A8CE17B2B69C002222D3 /* MainStoryboard.storyboard */,
-				A8480B9117B6E5E8006AFADC /* 516858-2560x1600.jpg */,
 				A829A8D117B2B69C002222D3 /* ViewController.h */,
 				A829A8D217B2B69C002222D3 /* ViewController.m */,
 				A829A8BD17B2B69C002222D3 /* Supporting Files */,
@@ -166,7 +196,6 @@
 				A829A8CB17B2B69C002222D3 /* Default@2x.png in Resources */,
 				A829A8CD17B2B69C002222D3 /* Default-568h@2x.png in Resources */,
 				A829A8D017B2B69C002222D3 /* MainStoryboard.storyboard in Resources */,
-				A8480B9217B6E5E8006AFADC /* 516858-2560x1600.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +209,11 @@
 				A829A8C317B2B69C002222D3 /* main.m in Sources */,
 				A829A8C717B2B69C002222D3 /* AppDelegate.m in Sources */,
 				A829A8D317B2B69C002222D3 /* ViewController.m in Sources */,
+				116D65C517B867C100C831DE /* ButtonView.m in Sources */,
+				116D65C617B867C100C831DE /* LabelView.m in Sources */,
+				116D65C717B867C100C831DE /* MaskView1.m in Sources */,
+				116D65C817B867C100C831DE /* MaskView2.m in Sources */,
+				116D65C917B867C100C831DE /* MaskView3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

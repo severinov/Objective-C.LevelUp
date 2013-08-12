@@ -12,19 +12,53 @@
 
 -(void) push:(id)itemToPush
 {
-    [self insertObject: itemToPush
-               atIndex:0];
+    [self addObject: itemToPush];
+    
+    if ([self count] > 1)
+    {
+        id temp = [self lastObject];
+        
+        for (int i = [self count] - 1; i > 0; i--)
+        {
+            [self replaceObjectAtIndex:i
+                            withObject:[self objectAtIndex:i - 1]];
+            
+        }
+        [self replaceObjectAtIndex:0
+                        withObject:temp];
+    }
+    else
+        [self addObject:@"_"];
 }
 
 -(id) pop
 {
-    if ([self count] != 0)
+    if ([self count] == 0)
+        return nil;
+    
+    id objectToReturn = [self objectAtIndex:0];
+    
+    if ([self count] > 2)
     {
-        id objectToReturn = [self objectAtIndex:0];
-        [self removeObjectAtIndex:0];
-        return objectToReturn;
+        for (int i = 0; i < [self count] - 1; i++)
+        {
+            [self replaceObjectAtIndex:i
+                            withObject:[self objectAtIndex:i + 1]];
+        }
+        
+        [self removeLastObject];
     }
-    else return nil;
+    else if ([self count] == 2)
+    {
+        [self replaceObjectAtIndex:0
+                        withObject:[self objectAtIndex:1]];
+        [self removeLastObject];
+    }
+    else
+        [self replaceObjectAtIndex:[self count] - 1
+                        withObject:@"_"];
+    
+    return objectToReturn;
 }
 
 -(id) peek

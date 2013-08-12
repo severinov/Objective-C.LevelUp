@@ -46,6 +46,7 @@
     NSString *tempString = [[NSString alloc] init];
     NSString *sourceString = [[NSString alloc] initWithString:[self.display.text stringByAppendingString:@"_"]];
     
+    
     for (int i = 0; i < [sourceString length]; i++)
     {
         NSString *currentCharacter = [[NSString alloc] initWithFormat:@"%c", [sourceString characterAtIndex:i]];
@@ -72,7 +73,7 @@
         if ([currentCharacter isEqualToString:@")"])
         {
             while (![[outputStack peek] isEqualToString:@"("])
-                [outputString addObject:[outputStack pop]];
+                [outputString push:[outputStack pop]];
             [outputStack pop];
         }
         
@@ -91,7 +92,7 @@
         {
             if ([outputStack count] > 0)
                 if (![[outputStack peek] isEqualToString:@"("])
-                    while ([normalPriorityOperands containsObject:[outputStack peek]])
+                    while ([normalPriorityOperands containsObject:[outputStack peek]] || [lowPriorityOperands containsObject:currentCharacter])
                     {
                         [outputString addObject:[outputStack pop]];
                     }
@@ -99,11 +100,64 @@
         }
     }
 
-    while ([outputStack count] > 0)
+    while (![[outputStack peek] isEqual:@"_"])
         if (![[outputStack peek] isEqual:@"("])
             [outputString addObject:[outputStack pop]];
         else
             [outputStack pop];
+
+    for (int i = 0; i < [outputString count]; i++)
+    {
+        if (
+                [lowPriorityOperands containsObject:[outputString objectAtIndex:i]] ||
+                [normalPriorityOperands containsObject:[outputString objectAtIndex:i]]
+           )
+        {
+            
+            NSString *operand = [[NSString alloc] initWithString:[outputString objectAtIndex:i]];
+            
+            float leftValue = [[outputString pop] floatValue];
+            float rightValue = [[outputString pop] floatValue];
+            NSNumber *result = [[NSNumber alloc] init];
+            
+            if ([operand isEqual:@"+"])
+            {
+                [outputString pop];
+                result = [NSNumber numberWithFloat:leftValue + rightValue];
+                [outputString push:result];
+                i = 0;
+            }
+            else if ([operand isEqual:@"-"])
+            {
+                [outputString pop];
+                result = [NSNumber numberWithFloat:leftValue - rightValue];
+                [outputString push:result];
+                i = 0;
+            }
+            else if ([operand isEqual:@"*"])
+            {
+                [outputString pop];
+                result = [NSNumber numberWithFloat:leftValue * rightValue];
+                [outputString push:result];
+                i = 0;
+            }
+            else if ([operand isEqual:@"/"])
+            {
+                [outputString pop];
+                result = [NSNumber numberWithFloat:leftValue / rightValue];
+                [outputString push:result];
+                i = 0;
+            }
+            else
+                return;
+        }
+    }
+    self.display.text =  [[outputString peek] stringValue];
+    
+    [outputString removeAllObjects];
+    [outputStack removeAllObjects];
+    tempString = @"";
+    sourceString = @"";
 }
 
 - (IBAction)clearPressed

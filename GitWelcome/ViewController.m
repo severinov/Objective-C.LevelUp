@@ -12,7 +12,7 @@
 
 - (IBAction)digitPressed:(id)sender
 {
-    NSLog(@"digit pressed = %@", [sender currentTitle]);
+    //NSLog(@"digit pressed = %@", [sender currentTitle]);
     
     NSString *digit = [sender currentTitle];
     

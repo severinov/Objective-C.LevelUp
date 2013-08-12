@@ -81,7 +81,7 @@
         {
             if ([outputStack count] > 0)
                 if (![[outputStack peek] isEqualToString:@"("])
-                    while ([lowPriorityOperands containsObject:[outputStack peek]])
+                    while ([normalPriorityOperands containsObject:[outputStack peek]])
                     {
                         [outputString addObject:[outputStack pop]];
                     }
@@ -92,7 +92,7 @@
         {
             if ([outputStack count] > 0)
                 if (![[outputStack peek] isEqualToString:@"("])
-                    while ([normalPriorityOperands containsObject:[outputStack peek]] || [lowPriorityOperands containsObject:currentCharacter])
+                    while ([normalPriorityOperands containsObject:[outputStack peek]])
                     {
                         [outputString addObject:[outputStack pop]];
                     }
@@ -106,6 +106,9 @@
         else
             [outputStack pop];
 
+    [outputString addObject:@"_"];
+    NSMutableArray *valuesStack = [[NSMutableArray alloc] init];
+    
     for (int i = 0; i < [outputString count]; i++)
     {
         if (
@@ -116,43 +119,52 @@
             
             NSString *operand = [[NSString alloc] initWithString:[outputString objectAtIndex:i]];
             
-            float leftValue = [[outputString pop] floatValue];
-            float rightValue = [[outputString pop] floatValue];
+            while (!(
+                     [lowPriorityOperands containsObject:[outputString peek]] ||
+                     [normalPriorityOperands containsObject:[outputString peek]]
+                     ))
+            {
+                [valuesStack push:[outputString pop]];
+            }
+            
+            
+            float rightValue = [[valuesStack pop] floatValue];
+            float leftValue = [[valuesStack pop] floatValue];
             NSNumber *result = [[NSNumber alloc] init];
             
             if ([operand isEqual:@"+"])
             {
                 [outputString pop];
                 result = [NSNumber numberWithFloat:leftValue + rightValue];
-                [outputString push:result];
-                i = 0;
+                [valuesStack push:result];
+                i = -1;
             }
             else if ([operand isEqual:@"-"])
             {
                 [outputString pop];
                 result = [NSNumber numberWithFloat:leftValue - rightValue];
-                [outputString push:result];
-                i = 0;
+                [valuesStack push:result];
+                i = -1;
             }
             else if ([operand isEqual:@"*"])
             {
                 [outputString pop];
                 result = [NSNumber numberWithFloat:leftValue * rightValue];
-                [outputString push:result];
-                i = 0;
+                [valuesStack push:result];
+                i = -1;
             }
             else if ([operand isEqual:@"/"])
             {
                 [outputString pop];
                 result = [NSNumber numberWithFloat:leftValue / rightValue];
-                [outputString push:result];
-                i = 0;
+                [valuesStack push:result];
+                i = -1;
             }
             else
                 return;
         }
     }
-    self.display.text =  [[outputString peek] stringValue];
+    self.display.text =  [[valuesStack peek] stringValue];
     
     [outputString removeAllObjects];
     [outputStack removeAllObjects];

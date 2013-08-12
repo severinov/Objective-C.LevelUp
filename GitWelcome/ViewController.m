@@ -73,7 +73,7 @@
         if ([currentCharacter isEqualToString:@")"])
         {
             while (![[outputStack peek] isEqualToString:@"("])
-                [outputString push:[outputStack pop]];
+                [outputString addObject:[outputStack pop]];
             [outputStack pop];
         }
         
@@ -81,7 +81,7 @@
         {
             if ([outputStack count] > 0)
                 if (![[outputStack peek] isEqualToString:@"("])
-                    while ([normalPriorityOperands containsObject:[outputStack peek]])
+                    while (([normalPriorityOperands containsObject:[outputStack peek]]) || ([lowPriorityOperands containsObject:[outputStack peek]]))
                     {
                         [outputString addObject:[outputStack pop]];
                     }
@@ -166,6 +166,7 @@
     }
     self.display.text =  [[valuesStack peek] stringValue];
     
+    [valuesStack removeAllObjects];
     [outputString removeAllObjects];
     [outputStack removeAllObjects];
     tempString = @"";

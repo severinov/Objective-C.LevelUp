@@ -13,6 +13,6 @@
 
 @property ENCalcModel * calcModel;
 
--(int)readString:(NSString *)string;
+-(int)readInput:(ENEntities *)entity;
 
 @end

@@ -8,8 +8,6 @@
 
 #import "ENCalcController.h"
 
-#define DONE   0 //Done without errors
-#define ERROR -1 //Error
 
 
 @implementation ENCalcController
@@ -28,59 +26,78 @@
 
 //функция чтения сроки и формирования
 //итоговой строки
--(int)readString:(NSString *)string
+-(int)readInput:(ENEntities *)entity
 {
-    int stringLenght = [string length];
     unichar character;
-    int resultPosition = 0;
-    int stackPosition = 0;
-    BOOL stateNegate = NO;
+    int lengthOfOperations = [[_calcModel stackOfOperations] count];
+    int lengthOfResult = [[_calcModel stackOfResult] count];
     
-    //если длина строки нулевая
-    //то нечего вычислять
-    if (stringLenght < 1)
-    {
-        return ERROR;
-    }
-    
-    //перебор символов строки
-    for (int i = 0; i < stringLenght; i++)
-    {
-        character = 0;
-        switch (character) {
-            case '0':
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
-            case '6':
-            case '7':
-            case '8':
-            case '9':
-                break;
-            case '(':
-                break;
-            case ')':
-                break;
-            case '+':
-                break;
-            case '-':
-
-                break;
-            case '*':
-                break;
-            case '/':
-                break;
-                
-            default:
-                return ERROR;
-                break;
-        }
+    //определение введенного символа
+    character = [[entity entity] characterAtIndex:0];
+    switch (character) {
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+            [_calcModel addInResult:entity];
+            break;
+        case '(':
+            [_calcModel addOperation:entity];
+            break;
+        case ')':
+            //перенести все знаки до "(" в итоговый стек
+            //и удалить ")"
+            [_calcModel addOperation:entity];
+            break;
+        case '+':
+            if (lengthOfResult == 0) {return ERR;}
+            if ([[_calcModel operationAtIndex:(lengthOfOperations-1)] priority] > LOW) {
+                //перенести все знаки в итоговый стек
+            }
+            [_calcModel addOperation:entity];
+            break;
+        case '-':
+            if (lengthOfResult == 0) {return ERR;}
+            if ([[_calcModel operationAtIndex:(lengthOfOperations-1)] priority] > LOW) {
+                //перенести все знаки в итоговый стек
+            }
+            [_calcModel addOperation:entity];
+            break;
+        case '*':
+            if (lengthOfResult == 0) {return ERR;}
+            if ([[_calcModel operationAtIndex:(lengthOfOperations-1)] priority] > NORM) {
+                //перенести все знаки в итоговый стек
+            }
+            [_calcModel addOperation:entity];
+            break;
+        case '/':
+            if (lengthOfResult == 0) {return ERR;}
+            if ([[_calcModel operationAtIndex:(lengthOfOperations-1)] priority] > NORM) {
+                //перенести все знаки в итоговый стек
+            }
+            [_calcModel addOperation:entity];
+            break;
+        case '^':
+            if (lengthOfResult == 0) {return ERR;}
+            [_calcModel addOperation:entity];
+            break;
+        default:
+            return ERR;
+            break;
     }
     
     
     return DONE;
 }
+
+
+
+
 
 @end

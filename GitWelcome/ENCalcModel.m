@@ -23,13 +23,13 @@
 }
 
 
--(void)insertInResult:(id)digit atIndex:(NSUInteger)index
+-(void)insertInResult:(ENEntities *)digit atIndex:(NSUInteger)index
 {
     [_stackOfResult insertObject:digit atIndex:index];
 }
--(void)addInResult:(id)digit
+-(void)addInResult:(ENEntities *)entity
 {
-    [_stackOfResult addObject:digit];
+    [_stackOfResult addObject:entity];
 }
 -(id)digitAtIndexOfResult:(NSUInteger)index
 {
@@ -37,11 +37,15 @@
 }
 
 
--(void)insertOperation:(id)operation atIndex:(NSUInteger)index
+-(void)insertOperation:(ENEntities *)operation atIndex:(NSUInteger)index
 {
-    [_stackOfResult insertObject:operation atIndex:index];
+    [_stackOfOperations insertObject:operation atIndex:index];
 }
--(id)operationAtIndex:(NSUInteger)index
+-(void)addOperation:(ENEntities *)operation
+{
+    [_stackOfOperations addObject:operation];
+}
+-(ENEntities *)operationAtIndex:(NSUInteger)index
 {
     return [_stackOfOperations objectAtIndex:index];
 }

@@ -19,8 +19,9 @@
 - (IBAction)buttonZero:(id)sender;
 
 - (IBAction)buttonDot:(id)sender;
-- (IBAction)buttonEqual:(id)sender;
+- (IBAction)buttonCalc:(id)sender;
 - (IBAction)buttonClear:(id)sender;
+- (IBAction)buttonBackspace:(id)sender;
 
 - (IBAction)buttonBraceOpen:(id)sender;
 - (IBAction)buttonBraceClose:(id)sender;

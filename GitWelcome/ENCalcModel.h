@@ -7,21 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ENEntities.h"
 
 @interface ENCalcModel : NSObject
 
-
+@property ENEntities * entity;
 @property NSMutableArray * stackOfResult;
 @property NSMutableArray * stackOfOperations;
 
 
+-(void)insertInResult:(ENEntities *)digit atIndex:(NSUInteger)index;
+-(void)addInResult:(ENEntities *)digit;
+-(ENEntities *)digitAtIndexOfResult:(NSUInteger)index;
 
--(void)insertInResult:(id)digit atIndex:(NSUInteger)index;
--(void)addInResult:(id)digit;
--(id)digitAtIndexOfResult:(NSUInteger)index;
-
--(void)insertOperation:(id)operation atIndex:(NSUInteger)index;
--(id)operationAtIndex:(NSUInteger)index;
+-(void)insertOperation:(ENEntities *)operation atIndex:(NSUInteger)index;
+-(void)addOperation:(ENEntities *)operation;
+-(ENEntities *)operationAtIndex:(NSUInteger)index;
 
 
 

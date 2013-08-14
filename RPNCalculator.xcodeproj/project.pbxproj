@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B6AB5DB617BB462000636FAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AB5DB517BB462000636FAE /* UIKit.framework */; };
+		B6AB5DB817BB462000636FAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AB5DB717BB462000636FAE /* Foundation.framework */; };
+		B6AB5DBA17BB462000636FAE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AB5DB917BB462000636FAE /* CoreGraphics.framework */; };
+		B6AB5DC017BB462000636FAE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6AB5DBE17BB462000636FAE /* InfoPlist.strings */; };
+		B6AB5DC217BB462000636FAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AB5DC117BB462000636FAE /* main.m */; };
+		B6AB5DC617BB462000636FAE /* RPNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AB5DC517BB462000636FAE /* RPNAppDelegate.m */; };
+		B6AB5DC817BB462000636FAE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AB5DC717BB462000636FAE /* Default.png */; };
+		B6AB5DCA17BB462000636FAE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AB5DC917BB462000636FAE /* Default@2x.png */; };
+		B6AB5DCC17BB462000636FAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AB5DCB17BB462000636FAE /* Default-568h@2x.png */; };
+		B6AB5DCF17BB462000636FAE /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6AB5DCD17BB462000636FAE /* MainStoryboard_iPhone.storyboard */; };
+		B6AB5DD217BB462000636FAE /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6AB5DD017BB462000636FAE /* MainStoryboard_iPad.storyboard */; };
+		B6AB5DD517BB462000636FAE /* RPNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AB5DD417BB462000636FAE /* RPNViewController.m */; };
+		B6AB5DDD17BB462000636FAE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AB5DDC17BB462000636FAE /* SenTestingKit.framework */; };
+		B6AB5DDE17BB462000636FAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AB5DB517BB462000636FAE /* UIKit.framework */; };
+		B6AB5DDF17BB462000636FAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AB5DB717BB462000636FAE /* Foundation.framework */; };
+		B6AB5DE717BB462000636FAE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6AB5DE517BB462000636FAE /* InfoPlist.strings */; };
+		B6AB5DEA17BB462000636FAE /* RPNCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AB5DE917BB462000636FAE /* RPNCalculatorTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6AB5DE017BB462000636FAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6AB5DAA17BB462000636FAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6AB5DB117BB462000636FAE;
+			remoteInfo = RPNCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B6AB5DB217BB462000636FAE /* RPNCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPNCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6AB5DB517BB462000636FAE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B6AB5DB717BB462000636FAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B6AB5DB917BB462000636FAE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B6AB5DBD17BB462000636FAE /* RPNCalculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RPNCalculator-Info.plist"; sourceTree = "<group>"; };
+		B6AB5DBF17BB462000636FAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6AB5DC117BB462000636FAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B6AB5DC317BB462000636FAE /* RPNCalculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RPNCalculator-Prefix.pch"; sourceTree = "<group>"; };
+		B6AB5DC417BB462000636FAE /* RPNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPNAppDelegate.h; sourceTree = "<group>"; };
+		B6AB5DC517BB462000636FAE /* RPNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPNAppDelegate.m; sourceTree = "<group>"; };
+		B6AB5DC717BB462000636FAE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B6AB5DC917BB462000636FAE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B6AB5DCB17BB462000636FAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B6AB5DCE17BB462000636FAE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		B6AB5DD117BB462000636FAE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		B6AB5DD317BB462000636FAE /* RPNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPNViewController.h; sourceTree = "<group>"; };
+		B6AB5DD417BB462000636FAE /* RPNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPNViewController.m; sourceTree = "<group>"; };
+		B6AB5DDB17BB462000636FAE /* RPNCalculatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPNCalculatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6AB5DDC17BB462000636FAE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B6AB5DE417BB462000636FAE /* RPNCalculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RPNCalculatorTests-Info.plist"; sourceTree = "<group>"; };
+		B6AB5DE617BB462000636FAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6AB5DE817BB462000636FAE /* RPNCalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPNCalculatorTests.h; sourceTree = "<group>"; };
+		B6AB5DE917BB462000636FAE /* RPNCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPNCalculatorTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6AB5DAF17BB462000636FAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6AB5DB617BB462000636FAE /* UIKit.framework in Frameworks */,
+				B6AB5DB817BB462000636FAE /* Foundation.framework in Frameworks */,
+				B6AB5DBA17BB462000636FAE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6AB5DD717BB462000636FAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6AB5DDD17BB462000636FAE /* SenTestingKit.framework in Frameworks */,
+				B6AB5DDE17BB462000636FAE /* UIKit.framework in Frameworks */,
+				B6AB5DDF17BB462000636FAE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B6AB5DA917BB462000636FAE = {
+			isa = PBXGroup;
+			children = (
+				B6AB5DBB17BB462000636FAE /* RPNCalculator */,
+				B6AB5DE217BB462000636FAE /* RPNCalculatorTests */,
+				B6AB5DB417BB462000636FAE /* Frameworks */,
+				B6AB5DB317BB462000636FAE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B6AB5DB317BB462000636FAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6AB5DB217BB462000636FAE /* RPNCalculator.app */,
+				B6AB5DDB17BB462000636FAE /* RPNCalculatorTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6AB5DB417BB462000636FAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6AB5DB517BB462000636FAE /* UIKit.framework */,
+				B6AB5DB717BB462000636FAE /* Foundation.framework */,
+				B6AB5DB917BB462000636FAE /* CoreGraphics.framework */,
+				B6AB5DDC17BB462000636FAE /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6AB5DBB17BB462000636FAE /* RPNCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				B6AB5DC417BB462000636FAE /* RPNAppDelegate.h */,
+				B6AB5DC517BB462000636FAE /* RPNAppDelegate.m */,
+				B6AB5DCD17BB462000636FAE /* MainStoryboard_iPhone.storyboard */,
+				B6AB5DD017BB462000636FAE /* MainStoryboard_iPad.storyboard */,
+				B6AB5DD317BB462000636FAE /* RPNViewController.h */,
+				B6AB5DD417BB462000636FAE /* RPNViewController.m */,
+				B6AB5DBC17BB462000636FAE /* Supporting Files */,
+			);
+			path = RPNCalculator;
+			sourceTree = "<group>";
+		};
+		B6AB5DBC17BB462000636FAE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6AB5DBD17BB462000636FAE /* RPNCalculator-Info.plist */,
+				B6AB5DBE17BB462000636FAE /* InfoPlist.strings */,
+				B6AB5DC117BB462000636FAE /* main.m */,
+				B6AB5DC317BB462000636FAE /* RPNCalculator-Prefix.pch */,
+				B6AB5DC717BB462000636FAE /* Default.png */,
+				B6AB5DC917BB462000636FAE /* Default@2x.png */,
+				B6AB5DCB17BB462000636FAE /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6AB5DE217BB462000636FAE /* RPNCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6AB5DE817BB462000636FAE /* RPNCalculatorTests.h */,
+				B6AB5DE917BB462000636FAE /* RPNCalculatorTests.m */,
+				B6AB5DE317BB462000636FAE /* Supporting Files */,
+			);
+			path = RPNCalculatorTests;
+			sourceTree = "<group>";
+		};
+		B6AB5DE317BB462000636FAE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6AB5DE417BB462000636FAE /* RPNCalculatorTests-Info.plist */,
+				B6AB5DE517BB462000636FAE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6AB5DB117BB462000636FAE /* RPNCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6AB5DED17BB462000636FAE /* Build configuration list for PBXNativeTarget "RPNCalculator" */;
+			buildPhases = (
+				B6AB5DAE17BB462000636FAE /* Sources */,
+				B6AB5DAF17BB462000636FAE /* Frameworks */,
+				B6AB5DB017BB462000636FAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RPNCalculator;
+			productName = RPNCalculator;
+			productReference = B6AB5DB217BB462000636FAE /* RPNCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B6AB5DDA17BB462000636FAE /* RPNCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6AB5DF017BB462000636FAE /* Build configuration list for PBXNativeTarget "RPNCalculatorTests" */;
+			buildPhases = (
+				B6AB5DD617BB462000636FAE /* Sources */,
+				B6AB5DD717BB462000636FAE /* Frameworks */,
+				B6AB5DD817BB462000636FAE /* Resources */,
+				B6AB5DD917BB462000636FAE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6AB5DE117BB462000636FAE /* PBXTargetDependency */,
+			);
+			name = RPNCalculatorTests;
+			productName = RPNCalculatorTests;
+			productReference = B6AB5DDB17BB462000636FAE /* RPNCalculatorTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6AB5DAA17BB462000636FAE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RPN;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Aleksandr Skorokhodov";
+			};
+			buildConfigurationList = B6AB5DAD17BB462000636FAE /* Build configuration list for PBXProject "RPNCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B6AB5DA917BB462000636FAE;
+			productRefGroup = B6AB5DB317BB462000636FAE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6AB5DB117BB462000636FAE /* RPNCalculator */,
+				B6AB5DDA17BB462000636FAE /* RPNCalculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6AB5DB017BB462000636FAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6AB5DC017BB462000636FAE /* InfoPlist.strings in Resources */,
+				B6AB5DC817BB462000636FAE /* Default.png in Resources */,
+				B6AB5DCA17BB462000636FAE /* Default@2x.png in Resources */,
+				B6AB5DCC17BB462000636FAE /* Default-568h@2x.png in Resources */,
+				B6AB5DCF17BB462000636FAE /* MainStoryboard_iPhone.storyboard in Resources */,
+				B6AB5DD217BB462000636FAE /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6AB5DD817BB462000636FAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6AB5DE717BB462000636FAE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B6AB5DD917BB462000636FAE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6AB5DAE17BB462000636FAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6AB5DC217BB462000636FAE /* main.m in Sources */,
+				B6AB5DC617BB462000636FAE /* RPNAppDelegate.m in Sources */,
+				B6AB5DD517BB462000636FAE /* RPNViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6AB5DD617BB462000636FAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6AB5DEA17BB462000636FAE /* RPNCalculatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6AB5DE117BB462000636FAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6AB5DB117BB462000636FAE /* RPNCalculator */;
+			targetProxy = B6AB5DE017BB462000636FAE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B6AB5DBE17BB462000636FAE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6AB5DBF17BB462000636FAE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B6AB5DCD17BB462000636FAE /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6AB5DCE17BB462000636FAE /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		B6AB5DD017BB462000636FAE /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6AB5DD117BB462000636FAE /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		B6AB5DE517BB462000636FAE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6AB5DE617BB462000636FAE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6AB5DEB17BB462000636FAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B6AB5DEC17BB462000636FAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6AB5DEE17BB462000636FAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RPNCalculator/RPNCalculator-Prefix.pch";
+				INFOPLIST_FILE = "RPNCalculator/RPNCalculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B6AB5DEF17BB462000636FAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RPNCalculator/RPNCalculator-Prefix.pch";
+				INFOPLIST_FILE = "RPNCalculator/RPNCalculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B6AB5DF117BB462000636FAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RPNCalculator.app/RPNCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RPNCalculator/RPNCalculator-Prefix.pch";
+				INFOPLIST_FILE = "RPNCalculatorTests/RPNCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B6AB5DF217BB462000636FAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RPNCalculator.app/RPNCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RPNCalculator/RPNCalculator-Prefix.pch";
+				INFOPLIST_FILE = "RPNCalculatorTests/RPNCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6AB5DAD17BB462000636FAE /* Build configuration list for PBXProject "RPNCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6AB5DEB17BB462000636FAE /* Debug */,
+				B6AB5DEC17BB462000636FAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6AB5DED17BB462000636FAE /* Build configuration list for PBXNativeTarget "RPNCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6AB5DEE17BB462000636FAE /* Debug */,
+				B6AB5DEF17BB462000636FAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B6AB5DF017BB462000636FAE /* Build configuration list for PBXNativeTarget "RPNCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6AB5DF117BB462000636FAE /* Debug */,
+				B6AB5DF217BB462000636FAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6AB5DAA17BB462000636FAE /* Project object */;
+}

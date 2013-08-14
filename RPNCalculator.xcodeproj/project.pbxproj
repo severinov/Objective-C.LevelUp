@@ -24,6 +24,8 @@
 		B6AB5DDF17BB462000636FAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AB5DB717BB462000636FAE /* Foundation.framework */; };
 		B6AB5DE717BB462000636FAE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6AB5DE517BB462000636FAE /* InfoPlist.strings */; };
 		B6AB5DEA17BB462000636FAE /* RPNCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AB5DE917BB462000636FAE /* RPNCalculatorTests.m */; };
+		B6AB5DFD17BB5B0800636FAE /* RPNExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AB5DFA17BB5B0700636FAE /* RPNExpression.m */; };
+		B6AB5DFE17BB5B0800636FAE /* RPNParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AB5DFC17BB5B0700636FAE /* RPNParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		B6AB5DE617BB462000636FAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B6AB5DE817BB462000636FAE /* RPNCalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPNCalculatorTests.h; sourceTree = "<group>"; };
 		B6AB5DE917BB462000636FAE /* RPNCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPNCalculatorTests.m; sourceTree = "<group>"; };
+		B6AB5DF917BB5B0700636FAE /* RPNExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPNExpression.h; sourceTree = "<group>"; };
+		B6AB5DFA17BB5B0700636FAE /* RPNExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPNExpression.m; sourceTree = "<group>"; };
+		B6AB5DFB17BB5B0700636FAE /* RPNParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPNParser.h; sourceTree = "<group>"; };
+		B6AB5DFC17BB5B0700636FAE /* RPNParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPNParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,10 @@
 				B6AB5DC417BB462000636FAE /* RPNAppDelegate.h */,
 				B6AB5DC517BB462000636FAE /* RPNAppDelegate.m */,
 				B6AB5DCD17BB462000636FAE /* MainStoryboard_iPhone.storyboard */,
+				B6AB5DF917BB5B0700636FAE /* RPNExpression.h */,
+				B6AB5DFA17BB5B0700636FAE /* RPNExpression.m */,
+				B6AB5DFB17BB5B0700636FAE /* RPNParser.h */,
+				B6AB5DFC17BB5B0700636FAE /* RPNParser.m */,
 				B6AB5DD017BB462000636FAE /* MainStoryboard_iPad.storyboard */,
 				B6AB5DD317BB462000636FAE /* RPNViewController.h */,
 				B6AB5DD417BB462000636FAE /* RPNViewController.m */,
@@ -278,6 +288,8 @@
 				B6AB5DC217BB462000636FAE /* main.m in Sources */,
 				B6AB5DC617BB462000636FAE /* RPNAppDelegate.m in Sources */,
 				B6AB5DD517BB462000636FAE /* RPNViewController.m in Sources */,
+				B6AB5DFD17BB5B0800636FAE /* RPNExpression.m in Sources */,
+				B6AB5DFE17BB5B0800636FAE /* RPNParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +482,7 @@
 				B6AB5DEF17BB462000636FAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6AB5DF017BB462000636FAE /* Build configuration list for PBXNativeTarget "RPNCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +491,7 @@
 				B6AB5DF217BB462000636FAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

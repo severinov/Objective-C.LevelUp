@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RPNParser.h"
 
 @interface RPNViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *expression;

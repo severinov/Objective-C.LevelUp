@@ -27,7 +27,12 @@
 }
 
 - (IBAction)startCalculate:(id)sender {
-    _result.text = _expression.text;
+    if ([_expression.text length] == 0 ) {
+        _result.text = @"напишите арифметическое выражение";
+    } else {
+        RPNExpression* expr = [[RPNParser sharedInstance] parseWithExpression:_expression.text];
+        _result.text = [NSString stringWithFormat:@"%@", [expr calculate] ];
+    }
     [_expression resignFirstResponder];
 }
 @end

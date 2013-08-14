@@ -44,8 +44,7 @@
     NSSet *lowPriorityOperands = [[NSSet alloc] initWithObjects:@"-", @"+", nil];
     NSSet *normalPriorityOperands = [[NSSet alloc] initWithObjects:@"/", @"*", nil];
     NSString *tempString = [[NSString alloc] init];
-    NSString *sourceString = [[NSString alloc] initWithString:[self.display.text stringByAppendingString:@"_"]];
-    
+    NSString *sourceString = [[NSString alloc] initWithString:self.display.text];
     
     for (int i = 0; i < [sourceString length]; i++)
     {
@@ -61,7 +60,8 @@
               ([currentCharacter isEqualToString:@"("]) ||
               ([currentCharacter isEqualToString:@")"]) ||
               (i == [sourceString length] - 1)) &&
-             (([tempString length] > 0)) )
+             (([tempString length] > 0))
+           )
         {
             [outputString addObject:[NSNumber numberWithFloat:[tempString floatValue]]];
             tempString = @"";
@@ -72,26 +72,24 @@
         
         if ([currentCharacter isEqualToString:@")"])
         {
-            while (![[outputStack peek] isEqualToString:@"("])
+            while ([outputStack stackPeekIsNot:@"("] && [outputStack isNotEmpty])
                 [outputString addObject:[outputStack pop]];
+            
             [outputStack pop];
         }
         
         if ([lowPriorityOperands containsObject:currentCharacter])
         {
-            if ([outputStack count] > 0)
-                if (![[outputStack peek] isEqualToString:@"("])
-                    while (([normalPriorityOperands containsObject:[outputStack peek]]) || ([lowPriorityOperands containsObject:[outputStack peek]]))
-                    {
+            if ([outputStack isNotEmpty] && [outputStack stackPeekIsNot:@"("])
+                    while ([normalPriorityOperands containsObject:[outputStack peek]] || [lowPriorityOperands containsObject:[outputStack peek]])
                         [outputString addObject:[outputStack pop]];
-                    }
+
             [outputStack push:currentCharacter];
         }
         
         if ([normalPriorityOperands containsObject:currentCharacter])
         {
-            if ([outputStack count] > 0)
-                if (![[outputStack peek] isEqualToString:@"("])
+            if ([outputStack isNotEmpty] && [outputStack stackPeekIsNot:@"("])
                     while ([normalPriorityOperands containsObject:[outputStack peek]])
                     {
                         [outputString addObject:[outputStack pop]];
@@ -100,13 +98,12 @@
         }
     }
 
-    while (![[outputStack peek] isEqual:@"_"])
-        if (![[outputStack peek] isEqual:@"("])
+    while ([outputStack isNotEmpty])
+        if ([outputStack stackPeekIsNot:@"("])
             [outputString addObject:[outputStack pop]];
         else
             [outputStack pop];
 
-    [outputString addObject:@"_"];
     NSMutableArray *valuesStack = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < [outputString count]; i++)
@@ -119,10 +116,12 @@
             
             NSString *operand = [[NSString alloc] initWithString:[outputString objectAtIndex:i]];
             
-            while (!(
+            while (!
+                    (
                      [lowPriorityOperands containsObject:[outputString peek]] ||
                      [normalPriorityOperands containsObject:[outputString peek]]
-                     ))
+                    )
+                  )
             {
                 [valuesStack push:[outputString pop]];
             }
@@ -130,6 +129,12 @@
             
             float rightValue = [[valuesStack pop] floatValue];
             float leftValue = [[valuesStack pop] floatValue];
+            
+            if (!rightValue || !leftValue)
+            {
+                [self clearPressed];
+                return;
+            }
             NSNumber *result = [[NSNumber alloc] init];
             
             if ([operand isEqual:@"+"])
@@ -161,10 +166,17 @@
                 i = -1;
             }
             else
+            {
+                [self clearPressed];
                 return;
+            }
         }
     }
-    self.display.text =  [[valuesStack peek] stringValue];
+    
+    if ([valuesStack peek])
+        self.display.text =  [[valuesStack peek] stringValue];
+    else
+        [self clearPressed];
     
     [valuesStack removeAllObjects];
     [outputString removeAllObjects];

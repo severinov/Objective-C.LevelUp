@@ -12,4 +12,9 @@
 -(void) push:(id)itemToPush;
 -(id) pop;
 -(id) peek;
+
+-(BOOL) isEmpty;
+-(BOOL) isNotEmpty;
+-(BOOL) stackPeekIs:(NSString *) itemToCompare;
+-(BOOL) stackPeekIsNot:(NSString *) itemToCompare;
 @end

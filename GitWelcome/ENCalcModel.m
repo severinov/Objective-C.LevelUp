@@ -45,6 +45,11 @@
 {
     [_stackOfOperations addObject:operation];
 }
+-(void)removeOperationAtIndex:(int)index
+{
+    [_stackOfOperations removeObjectAtIndex:index];
+}
+
 -(ENEntities *)operationAtIndex:(NSUInteger)index
 {
     return [_stackOfOperations objectAtIndex:index];

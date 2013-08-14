@@ -10,13 +10,12 @@
 
 #define ERR    -1
 #define DON     0
-#define BROPEN  1
-#define RBCLOSE 2
+#define BRO     1
+#define BRC     2
 #define LOW     3
 #define NORM    4
 #define HI      5
 #define NONP   -2
-#define BRO     
 
 @interface ENEntities : NSObject
 

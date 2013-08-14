@@ -11,11 +11,11 @@
 @implementation ENEntities
 
 
-+(ENEntities *)entityWithString:(NSString *)entity andPriority:(int)priority
++(ENEntities *)entityWithString:(NSString *)string andPriority:(int)priority
 {
     ENEntities * entityTemp = [[ENEntities alloc] init];
-    entityTemp.entity = entity;
-    entityTemp.priority = priority;
+    [entityTemp setEntity:string];
+    [entityTemp setPriority:priority];
     return entityTemp;
 }
 

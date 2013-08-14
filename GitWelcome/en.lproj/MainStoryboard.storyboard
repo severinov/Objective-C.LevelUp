@@ -297,7 +297,6 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonMultipy:" destination="2" eventType="touchUpInside" id="POY-73-zAk"/>
-                                    <action selector="buttonSubstract:" destination="2" eventType="touchUpInside" id="0ed-H2-fmW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2nB-Aj-6te">

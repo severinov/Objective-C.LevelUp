@@ -11,8 +11,11 @@
 
 @interface ENCalcController : NSObject
 
+@property BOOL negate;
 @property ENCalcModel * calcModel;
 
 -(int)readInput:(ENEntities *)entity;
+-(void)operationProcessingWithEntity:(ENEntities*)entity;
+-(void)compliteProcessing;
 
 @end

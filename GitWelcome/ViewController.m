@@ -88,6 +88,7 @@
 }
 - (IBAction)buttonCalc:(id)sender
 {
+    [_controller compliteProcessing];
     NSString * string = @"";
     for (ENEntities * element in [_controller.calcModel stackOfResult])
     {
@@ -103,17 +104,22 @@
 
 - (IBAction)buttonBackspace:(id)sender
 {
-    
+    NSString * string = @"";
+    for (ENEntities * element in [_controller.calcModel stackOfOperations])
+    {
+        string = [string stringByAppendingString:[element entity]];
+    }
+    [_fieldText setText:string];
 }
 
 - (IBAction)buttonBraceOpen:(id)sender
 {
-    ENEntities * ent = [ENEntities entityWithString:@"(" andPriority:NONP];
+    ENEntities * ent = [ENEntities entityWithString:@"(" andPriority:BRO];
     [_controller readInput:ent];
 }
 - (IBAction)buttonBraceClose:(id)sender
 {
-    ENEntities * ent = [ENEntities entityWithString:@")" andPriority:NONP];
+    ENEntities * ent = [ENEntities entityWithString:@")" andPriority:BRC];
     [_controller readInput:ent];
 }
 - (IBAction)buttonPlus:(id)sender

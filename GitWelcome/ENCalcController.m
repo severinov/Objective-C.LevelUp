@@ -18,6 +18,7 @@
     self = [super init];
     if (self) {
         _calcModel = [[ENCalcModel alloc] init];
+        _negate = YES;
     }
     return self;
 }
@@ -31,6 +32,15 @@
     unichar character;
     int lengthOfOperations = [[_calcModel stackOfOperations] count];
     int lengthOfResult = [[_calcModel stackOfResult] count];
+
+    ENEntities * lastOperation = [[ENEntities alloc] init];
+    ENEntities * lastResult = [[ENEntities alloc] init];
+    if (lengthOfOperations != 0) {
+        lastOperation = [_calcModel operationAtIndex:(lengthOfOperations-1)];
+    }
+    if (lengthOfOperations != 0) {
+        lastResult = [_calcModel operationAtIndex:(lengthOfOperations-1)];
+    }
     
     //определение введенного символа
     character = [[entity entity] characterAtIndex:0];
@@ -57,29 +67,37 @@
             break;
         case '+':
             if (lengthOfResult == 0) {return ERR;}
-            if ([[_calcModel operationAtIndex:(lengthOfOperations-1)] priority] > LOW) {
-                //перенести все знаки в итоговый стек
+            //переносим все знаки с бОльшим приоритетом и до скобок в результат
+            if ([lastOperation priority] > LOW) {
+                [self operationProcessingWithEntity:entity];
+                break;
             }
             [_calcModel addOperation:entity];
             break;
         case '-':
-            if (lengthOfResult == 0) {return ERR;}
-            if ([[_calcModel operationAtIndex:(lengthOfOperations-1)] priority] > LOW) {
-                //перенести все знаки в итоговый стек
+//            if (lengthOfResult == 0) {return ERR;}
+            //переносим все знаки с бОльшим приоритетом и до скобок в результат
+            if ([lastOperation priority] > LOW) {
+                [self operationProcessingWithEntity:entity];
+                break;
             }
             [_calcModel addOperation:entity];
             break;
         case '*':
             if (lengthOfResult == 0) {return ERR;}
-            if ([[_calcModel operationAtIndex:(lengthOfOperations-1)] priority] > NORM) {
-                //перенести все знаки в итоговый стек
+            //переносим все знаки с бОльшим приоритетом и до скобок в результат
+            if ([lastOperation priority] > NORM) {
+                [self operationProcessingWithEntity:entity];
+                break;
             }
             [_calcModel addOperation:entity];
             break;
         case '/':
             if (lengthOfResult == 0) {return ERR;}
-            if ([[_calcModel operationAtIndex:(lengthOfOperations-1)] priority] > NORM) {
-                //перенести все знаки в итоговый стек
+            //переносим все знаки с бОльшим приоритетом и до скобок в результат
+            if ([lastOperation priority] > NORM) {
+                [self operationProcessingWithEntity:entity];
+                break;
             }
             [_calcModel addOperation:entity];
             break;
@@ -91,11 +109,43 @@
             return ERR;
             break;
     }
-    
-    
-    return DONE;
+    return DON;
 }
 
+
+
+-(void)operationProcessingWithEntity:(ENEntities*)entity
+{
+    int lengthOfOperations = [[_calcModel stackOfOperations] count];
+    ENEntities * lastOperation = [_calcModel operationAtIndex:(lengthOfOperations-1)];
+    
+    while ([lastOperation priority] > [entity priority] &&
+           [lastOperation priority] != BRO &&
+           [lastOperation priority] != BRC)
+    {
+        [_calcModel addInResult: lastOperation ];
+        [_calcModel removeOperationAtIndex:lengthOfOperations-1];
+        lengthOfOperations--;
+        if (lengthOfOperations > 0) {
+            lastOperation = [_calcModel operationAtIndex:(lengthOfOperations - 1)];
+        }else{
+            break;
+        }
+    }
+    [_calcModel addOperation:entity];
+}
+
+
+
+-(void)compliteProcessing
+{
+    int lengthOfOperations = [[_calcModel stackOfOperations] count];
+    for (int i = lengthOfOperations - 1; i >= 0; i--)
+    {
+        [_calcModel addInResult:[_calcModel operationAtIndex:i]];
+        [_calcModel removeOperationAtIndex:i];
+    }
+}
 
 
 

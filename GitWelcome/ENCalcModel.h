@@ -18,6 +18,7 @@
 
 -(void)insertInResult:(ENEntities *)digit atIndex:(NSUInteger)index;
 -(void)addInResult:(ENEntities *)digit;
+-(void)removeOperationAtIndex:(int)index;
 -(ENEntities *)digitAtIndexOfResult:(NSUInteger)index;
 
 -(void)insertOperation:(ENEntities *)operation atIndex:(NSUInteger)index;

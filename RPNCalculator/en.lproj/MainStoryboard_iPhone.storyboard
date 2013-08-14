@@ -1,23 +1,109 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="RPNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Калькулятор" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMZ-vR-5Dg">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="CYR-lJ-6hz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="вычисляет выражения со знаками + - * / и умеет понимать скобки" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="agM-X0-DGo">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="Foa-Rc-bPa"/>
+                                    <constraint firstAttribute="width" constant="200" id="nvN-Lu-9mp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KUk-t5-Tvk">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="287" id="6bf-d8-8fY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXA-k9-mam">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="вычислить">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startCalculate:" destination="2" eventType="touchUpInside" id="Omu-Vl-uZH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="результат :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcY-9J-RxE">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj0-Fu-ZBm">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="7Cu-ow-Sdk"/>
+                                    <constraint firstAttribute="width" constant="275" id="7k2-Sg-XgI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Mj0-Fu-ZBm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="1Oa-5p-9QT"/>
+                            <constraint firstItem="VXA-k9-mam" firstAttribute="top" secondItem="KUk-t5-Tvk" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="FCQ-6n-lLl"/>
+                            <constraint firstItem="zMZ-vR-5Dg" firstAttribute="top" secondItem="3" secondAttribute="top" constant="28" id="ICD-LX-Dos"/>
+                            <constraint firstItem="Mj0-Fu-ZBm" firstAttribute="top" secondItem="UcY-9J-RxE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ool-Xe-YLE"/>
+                            <constraint firstItem="zMZ-vR-5Dg" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="QZ6-5K-Yym"/>
+                            <constraint firstItem="UcY-9J-RxE" firstAttribute="top" secondItem="3" secondAttribute="top" constant="245" id="R4E-fv-PlP"/>
+                            <constraint firstItem="Mj0-Fu-ZBm" firstAttribute="leading" secondItem="UcY-9J-RxE" secondAttribute="leading" type="default" id="R92-J2-enC"/>
+                            <constraint firstItem="VXA-k9-mam" firstAttribute="trailing" secondItem="KUk-t5-Tvk" secondAttribute="trailing" type="default" id="UAk-U9-PtK"/>
+                            <constraint firstItem="agM-X0-DGo" firstAttribute="centerX" secondItem="zMZ-vR-5Dg" secondAttribute="centerX" type="default" id="gLl-U5-vn7"/>
+                            <constraint firstItem="KUk-t5-Tvk" firstAttribute="top" secondItem="3" secondAttribute="top" constant="153" id="hbk-kb-gLz"/>
+                            <constraint firstItem="agM-X0-DGo" firstAttribute="top" secondItem="zMZ-vR-5Dg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="i1J-37-F0b"/>
+                            <constraint firstItem="zMZ-vR-5Dg" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="osI-km-Gr3"/>
+                            <constraint firstItem="KUk-t5-Tvk" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="so8-XX-ZUG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="expression" destination="KUk-t5-Tvk" id="CWU-NE-qMn"/>
+                        <outlet property="result" destination="Mj0-Fu-ZBm" id="2qT-pw-IdE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="4" y="108"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RPNViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RPNViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startCalculate:"/>
+                <relationship kind="outlet" name="expression" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="result" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

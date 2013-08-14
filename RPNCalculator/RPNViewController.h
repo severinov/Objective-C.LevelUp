@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface RPNViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *expression;
+@property (weak, nonatomic) IBOutlet UILabel *result;
+- (IBAction)startCalculate:(id)sender;
 
 @end

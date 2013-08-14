@@ -26,4 +26,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)startCalculate:(id)sender {
+    _result.text = _expression.text;
+    [_expression resignFirstResponder];
+}
 @end

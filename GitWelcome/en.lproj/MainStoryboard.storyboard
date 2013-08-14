@@ -114,7 +114,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonNine:" destination="2" eventType="touchUpInside" id="KLf-4R-jh2"/>
                                     <action selector="buttonSeven:" destination="2" eventType="touchUpInside" id="fcq-JS-We4"/>
                                 </connections>
                             </button>
@@ -235,7 +234,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonBraceClose:" destination="2" eventType="touchUpInside" id="YLC-Wb-dvT"/>
                                     <action selector="buttonBraceOpen:" destination="2" eventType="touchUpInside" id="Xrd-EU-fhb"/>
                                 </connections>
                             </button>

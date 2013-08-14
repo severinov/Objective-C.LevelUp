@@ -63,7 +63,7 @@
         case ')':
             //перенести все знаки до "(" в итоговый стек
             //и удалить ")"
-            [_calcModel addOperation:entity];
+            [self braceProcessing];
             break;
         case '+':
             if (lengthOfResult == 0) {return ERR;}
@@ -146,6 +146,102 @@
         [_calcModel removeOperationAtIndex:i];
     }
 }
+
+
+-(void)braceProcessing
+{
+    int lengthOfOperations = [[_calcModel stackOfOperations] count];
+    int i = lengthOfOperations -1;
+    ENEntities * entity = [_calcModel operationAtIndex:i];
+    while ([entity priority] != BRO)
+    {
+        [_calcModel addInResult:entity];
+        [_calcModel removeOperationAtIndex:i];
+        i--;
+        if (i >= 0) {
+            entity = [_calcModel operationAtIndex:i];
+        }else{
+            break;
+        }
+    }
+    [_calcModel removeOperationAtIndex:i];
+}
+
+
+-(NSString *)calculate
+{
+    int lengthOfStack = [[_calcModel stackOfResult] count];
+    for (int i = 1; i<lengthOfStack; i++)
+    {
+        int operationPosition = 0;
+        ENEntities * entitieOp = [_calcModel entityAtIndexOfResult:i];
+        
+        double result = 0;
+
+        if ([entitieOp priority] != NONP)
+        {
+            ENEntities * entitieX = [_calcModel entityAtIndexOfResult:i-2];
+            ENEntities * entitieY = [_calcModel entityAtIndexOfResult:i-1];
+            operationPosition = i;
+
+            int x = [[entitieX entity] integerValue];
+            int y = [[entitieY entity] integerValue];
+            NSLog(@"x = %d, y = %d",x,y);
+            
+            switch ([[entitieOp entity] characterAtIndex:0]) {
+                case '+':
+                    result = x+y;
+                    NSLog(@"result = %f", result);
+                    break;
+                case '-':
+                    result = x-y;
+                    break;
+                case '*':
+                    result = x*y;
+                    break;
+                case '/':
+                    result = (double)x/(double)y;
+                    NSLog(@"result = %f", result);
+                    break;
+                case '^':
+                    result = pow(x, y);
+                    break;
+                default:
+                    break;
+            }
+            ENEntities * newEntity = [ENEntities entityWithString:[NSString stringWithFormat:@"%f", result] andPriority:NONP];
+            
+            NSMutableArray * arrayTemp = [NSMutableArray array];
+            
+            for (int i=0; i<operationPosition - 2; i++) {
+                [arrayTemp addObject:[_calcModel entityAtIndexOfResult:i]];
+            }
+            
+            [arrayTemp addObject:newEntity];
+            
+            for (int i = operationPosition+1; i < lengthOfStack; i++) {
+                NSLog(@"!!!");
+                [arrayTemp addObject:[_calcModel entityAtIndexOfResult:i]];
+            }
+            
+
+            [[_calcModel stackOfResult] removeAllObjects];
+            _calcModel.stackOfResult = arrayTemp;
+//            NSLog(@"%@", [[_calcModel entityAtIndexOfResult:0] entity]);
+            
+            for (ENEntities * element in _calcModel.stackOfResult) {
+                NSLog(@"element = %@", [element entity]);
+            }
+            lengthOfStack = [[_calcModel stackOfResult] count];
+            if (lengthOfStack>1) {
+                i=1;
+            }
+        }//if
+    }
+    return [[_calcModel entityAtIndexOfResult:0] entity];
+}
+
+
 
 
 

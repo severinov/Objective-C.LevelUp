@@ -86,16 +86,19 @@
     ENEntities * ent = [ENEntities entityWithString:@"." andPriority:NONP];
     [_controller readInput:ent];
 }
+
 - (IBAction)buttonCalc:(id)sender
 {
     [_controller compliteProcessing];
-    NSString * string = @"";
-    for (ENEntities * element in [_controller.calcModel stackOfResult])
-    {
-        string = [string stringByAppendingString:[element entity]];
-    }
-    [_fieldText setText:string];
+//    NSString * string = @"";
+//    for (ENEntities * element in [_controller.calcModel stackOfResult])
+//    {
+//        string = [string stringByAppendingString:[element entity]];
+//    }
+
+    [_fieldText setText:[_controller calculate]];
 }
+
 - (IBAction)buttonClear:(id)sender
 {
     [_fieldText setText:@""];

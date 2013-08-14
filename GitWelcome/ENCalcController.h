@@ -16,6 +16,8 @@
 
 -(int)readInput:(ENEntities *)entity;
 -(void)operationProcessingWithEntity:(ENEntities*)entity;
+-(void)braceProcessing;
 -(void)compliteProcessing;
+-(NSString*)calculate;
 
 @end

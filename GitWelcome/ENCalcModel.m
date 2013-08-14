@@ -31,7 +31,7 @@
 {
     [_stackOfResult addObject:entity];
 }
--(id)digitAtIndexOfResult:(NSUInteger)index
+-(id)entityAtIndexOfResult:(NSUInteger)index
 {
     return [_stackOfResult objectAtIndex:index];
 }

@@ -11,9 +11,22 @@
 
 @implementation RPNParser
 
-static RPNParser *_sharedInstance = nil;
-static NSArray* operations = nil; 
+    static RPNParser *_sharedInstance = nil;
+    static NSArray* operations = nil; 
 
+    NSMutableArray* outString; 
+    NSMutableArray* stack;
+
+
+
+/*!
+ инициализиреум массив operations
+ */
++ (void) operations {
+    if (!operations) {
+        operations = [[NSArray alloc] initWithObjects:@"+",@"-", @"*", @"/" ,nil];
+    }
+}
 
 /*!
  @method sharedInstance
@@ -24,7 +37,7 @@ static NSArray* operations = nil;
 	{
 		if (!_sharedInstance) {
 			_sharedInstance = [[RPNParser alloc] init];
-            operations = [[NSArray alloc] initWithObjects:@"+",@"-", @"*", @"/" ,nil];
+            [RPNParser operations];
 		}
 	}
 	return _sharedInstance;
@@ -36,8 +49,8 @@ static NSArray* operations = nil;
  @method parseWithExpression
  @adstract парсит строку с арифметическим выражением
  */
-- (RPNExpression *)parseWithExpression: (NSString*)_expression {
-    NSLog( [NSString stringWithFormat: @"parse to RPN\n %@", _expression]);
+- (NSString *)parseToStringWithExpression: (NSString*)_expression {
+    NSLog( @"parse to RPN\n %@", _expression);
     
     outString = [NSMutableArray arrayWithCapacity:1];
     stack = [NSMutableArray arrayWithCapacity:1];
@@ -72,11 +85,21 @@ static NSArray* operations = nil;
             [outString addObject: str];
         }
     }
+    NSLog(@"after for");
     [self clearStack];
+    NSLog(@"after clear. out string %@ ", outString);
     
-    RPNExpression* expression = [[RPNExpression alloc] initWithString:[ outString componentsJoinedByString:@""]];
-    return expression;
+    return [ outString componentsJoinedByString:@""];
 }
+
+- (RPNExpression *)parseToRPNWithExpression: (NSString*)_expression {
+    
+    RPNExpression* expression = [[RPNExpression alloc] initWithString: [self parseToStringWithExpression: _expression] ];
+    NSLog(@"beore return %@", expression);
+    return expression;
+
+}
+
 
 - (void) clearStack {
     while( [stack count] > 0 ) {
@@ -85,7 +108,7 @@ static NSArray* operations = nil;
         [outString addObject: @" "];
         [outString addObject: obj];
     }
-
+    
 }
 
 - (int) operationPriority:(NSString*) operation {
@@ -131,6 +154,6 @@ static NSArray* operations = nil;
             break;
         }
     }
-
+    
 }
 @end

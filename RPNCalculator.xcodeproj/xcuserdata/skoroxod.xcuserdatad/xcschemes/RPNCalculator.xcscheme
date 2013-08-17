@@ -28,16 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B6AB5DDA17BB462000636FAE"
-               BuildableName = "RPNCalculatorTests.octest"
-               BlueprintName = "RPNCalculatorTests"
-               ReferencedContainer = "container:RPNCalculator.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

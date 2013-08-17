@@ -10,14 +10,10 @@
 #import "RPNExpression.h"
 
 @interface RPNParser : NSObject
-{
-    NSMutableArray* outString; 
-    NSMutableArray* stack;
-    
-}
 
 
-- (RPNExpression *)parseWithExpression:(NSString *)_expresson;
+- (RPNExpression *)parseToRPNWithExpression:(NSString *)_expresson;
+- (NSString *)parseToStringWithExpression:(NSString *)_expresson;
 
 
 + (RPNParser *)sharedInstance;

@@ -10,31 +10,40 @@
 @implementation RPNExpression
 
 
+static NSArray* operations = nil;
+
++ (void)operations {
+    if (!operations) {
+        operations = [[NSArray alloc] initWithObjects:@"+",@"-", @"*", @"/", nil];
+    }
+}
+
 /*!
  @method initWithString
  @abstract Конструктор. Класса выражение в ОПН
  @param _expression выражение в ОПН 
  (разделитель символов - пробел. разбирает операции + - * /)
  */
-- (id)initWithString:(NSString *)_expression {
+- (id)initWithString:(NSString *)_stringExpression {
 	self = [super init];
 	if (self != nil) {
-		self.expression = _expression;
+        [RPNExpression operations];
+		self.expression = _stringExpression;
         self.data = (NSMutableArray *)[self.expression componentsSeparatedByString:@" "];
         [self.data removeObject:@""];
-        NSLog(@"%@", self.data);
-        operations = [[NSArray alloc] initWithObjects:@"+",@"-", @"*", @"/" ,nil];
+        NSLog(@"data %@", self.data);
 	}
 	return self;
 }
 
 
+
 - (id)init {
 	self = [super init];
 	if (self != nil) {
+        [RPNExpression operations];
 		self.expression = nil;
         self.data = nil;
-        operations = [[NSArray alloc] initWithObjects:@"+",@"-", @"*", @"/" ,nil];
 	}
 	return self;
 }
@@ -53,8 +62,11 @@
  */
 - (NSNumber*) calculate {
     NSMutableArray* stack = [NSMutableArray arrayWithCapacity:1];
-    for (NSString* currentString in self.data)
+    NSLog(@"data %@", self.data);
+    for (int i=0; i<[self.data count]; i++)
     {
+        NSString* currentString = [self.data objectAtIndex:i];
+        NSLog(@"current item: %@ stack %@", currentString, stack);
         if( [operations containsObject:currentString]) {
             NSString* op2 = [stack lastObject  ];
             [stack removeLastObject];
@@ -72,7 +84,13 @@
         }
         
     }
-    return [NSNumber numberWithFloat:[[stack lastObject] floatValue]];
+    if( [stack count] !=1 ) {
+        NSLog(@"Неправильный формат выражения в ОПН %@" , stack);
+        return nil;
+    }
+    NSNumber* ret = [NSNumber numberWithFloat:[[stack lastObject] floatValue]];
+    NSLog(@"return %@", ret);
+    return ret;
 }
 
 

@@ -30,7 +30,7 @@
     if ([_expression.text length] == 0 ) {
         _result.text = @"напишите арифметическое выражение";
     } else {
-        RPNExpression* expr = [[RPNParser sharedInstance] parseWithExpression:_expression.text];
+        RPNExpression* expr = [[RPNParser sharedInstance] parseToRPNWithExpression:_expression.text];
         _result.text = [NSString stringWithFormat:@"%@", [expr calculate] ];
     }
     [_expression resignFirstResponder];

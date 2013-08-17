@@ -9,10 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface RPNExpression : NSObject
-{
-    @protected
-    NSArray* operations;
-}
+
 
 @property NSString *expression;
 @property NSMutableArray *data;

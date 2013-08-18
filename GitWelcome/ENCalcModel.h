@@ -14,6 +14,7 @@
 @property ENEntities * entity;
 @property NSMutableArray * stackOfResult;
 @property NSMutableArray * stackOfOperations;
+@property NSMutableArray * stackOfInput;
 @property NSString * stringDisplay;
 
 
@@ -25,6 +26,8 @@
 -(void)insertOperation:(ENEntities *)operation atIndex:(NSUInteger)index;
 -(void)addOperation:(ENEntities *)operation;
 -(ENEntities *)operationAtIndex:(NSUInteger)index;
+
+-(void)fillStringDisplay;
 
 
 

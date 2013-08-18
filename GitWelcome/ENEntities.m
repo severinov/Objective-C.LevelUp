@@ -23,7 +23,7 @@
 {
     self = [super init];
     if (self) {
-        [self setValue:@"" forKey:@"string"];
+        _string = @"";
         _priority = NONP;
     }
     return self;

@@ -14,10 +14,12 @@
 @property BOOL negate;
 @property ENCalcModel * calcModel;
 
--(int)readInput:(ENEntities *)entity;
+-(void)readInput:(ENEntities *)entity;
 -(void)operationProcessingWithEntity:(ENEntities*)entity;
 -(void)braceProcessing;
 -(void)compliteProcessing;
 -(NSString*)calculate;
+-(void)backspace;
+-(void)clear;
 
 @end

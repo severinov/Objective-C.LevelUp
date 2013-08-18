@@ -11,9 +11,10 @@
 - (void)viewDidLoad
 {
         [super viewDidLoad];
-      // Do any additional setup after loading the view, typically from a nib.
     
     _controller = [[ENCalcController alloc] init];
+    //создаем наблюдателя за строкой модели
+    [self addObserver:self forKeyPath:@"controller.calcModel.stringDisplay" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -23,11 +24,24 @@
 }
 
 
+//метод наблюдателя
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    //проверяем значение ключа, чтобы знать блин, что менять
+    if ([keyPath isEqualToString:@"controller.calcModel.stringDisplay"]) {
+        [_fieldText setText:[change objectForKey:NSKeyValueChangeNewKey]];
+    }
+}
+
 
 - (void)viewDidUnload
 {
+    [self removeObserver:self forKeyPath:@"controller.calcModel.stringDisplay"];
     [self setFieldText:nil];
 }
+
+
+
 
 
 - (IBAction)buttonOne:(id)sender
@@ -89,30 +103,19 @@
 
 - (IBAction)buttonCalc:(id)sender
 {
-    [_controller compliteProcessing];
-//    NSString * string = @"";
-//    for (ENEntities * element in [_controller.calcModel stackOfResult])
-//    {
-//        string = [string stringByAppendingString:[element entity]];
-//    }
+//    [_controller compliteProcessing];
 
     [_fieldText setText:[_controller calculate]];
 }
 
 - (IBAction)buttonClear:(id)sender
 {
-    [_fieldText setText:@""];
-//    [_controller clear];
+    [_controller clear];
 }
 
 - (IBAction)buttonBackspace:(id)sender
 {
-    NSString * string = @"";
-    for (ENEntities * element in [_controller.calcModel stackOfOperations])
-    {
-        string = [string stringByAppendingString:[element string]];
-    }
-    [_fieldText setText:string];
+    [_controller backspace];
 }
 
 - (IBAction)buttonBraceOpen:(id)sender

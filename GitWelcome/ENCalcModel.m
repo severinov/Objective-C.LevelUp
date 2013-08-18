@@ -18,8 +18,21 @@
     if (self) {
         _stackOfResult      = [[NSMutableArray alloc] init];
         _stackOfOperations  = [[NSMutableArray alloc] init];
+        _stackOfInput       = [[NSMutableArray alloc] init];
+        [self setValue:@"" forKey:@"stringDisplay"];
     }
     return self;
+}
+
+
+-(void)fillStringDisplay
+{
+    [self willChangeValueForKey:@"stringDisplay"];
+    _stringDisplay = @"";
+    for (ENEntities * element in _stackOfInput) {
+        _stringDisplay = [_stringDisplay stringByAppendingString: [element string]];
+    }
+    [self didChangeValueForKey:@"stringDisplay"];
 }
 
 

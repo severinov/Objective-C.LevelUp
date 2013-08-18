@@ -14,6 +14,7 @@
 @property ENEntities * entity;
 @property NSMutableArray * stackOfResult;
 @property NSMutableArray * stackOfOperations;
+@property NSString * stringDisplay;
 
 
 -(void)insertInResult:(ENEntities *)digit atIndex:(NSUInteger)index;

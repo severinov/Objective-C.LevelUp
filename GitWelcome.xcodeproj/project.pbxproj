@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F07D77517BCD1830056DC90 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F07D77417BCD1830056DC90 /* background@2x.png */; };
 		6F1BF79B17B7F61800ED5AB8 /* ENCalcModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1BF79A17B7F61800ED5AB8 /* ENCalcModel.m */; };
 		6F1BF79E17B7F75A00ED5AB8 /* ENCalcController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1BF79D17B7F75A00ED5AB8 /* ENCalcController.m */; };
+		6F1CAB6A17C0133600112422 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1CAB6917C0133600112422 /* button@2x.png */; };
 		6F743B5617BAB99D002A30E5 /* ENEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F743B5517BAB99D002A30E5 /* ENEntities.m */; };
+		6FA8F75817C0A4F900853FD0 /* textField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FA8F75717C0A4F900853FD0 /* textField@2x.png */; };
+		6FD2E19B17C0254C00A98B64 /* bigButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FD2E19A17C0254C00A98B64 /* bigButton@2x.png */; };
 		A829A8B717B2B69C002222D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A829A8B617B2B69C002222D3 /* UIKit.framework */; };
 		A829A8B917B2B69C002222D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A829A8B817B2B69C002222D3 /* Foundation.framework */; };
 		A829A8BB17B2B69C002222D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A829A8BA17B2B69C002222D3 /* CoreGraphics.framework */; };
@@ -24,12 +28,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F07D77417BCD1830056DC90 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		6F1BF79917B7F61800ED5AB8 /* ENCalcModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENCalcModel.h; sourceTree = "<group>"; };
 		6F1BF79A17B7F61800ED5AB8 /* ENCalcModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENCalcModel.m; sourceTree = "<group>"; };
 		6F1BF79C17B7F75A00ED5AB8 /* ENCalcController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENCalcController.h; sourceTree = "<group>"; };
 		6F1BF79D17B7F75A00ED5AB8 /* ENCalcController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENCalcController.m; sourceTree = "<group>"; };
+		6F1CAB6917C0133600112422 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
 		6F743B5417BAB99D002A30E5 /* ENEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENEntities.h; sourceTree = "<group>"; };
 		6F743B5517BAB99D002A30E5 /* ENEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENEntities.m; sourceTree = "<group>"; };
+		6FA8F75717C0A4F900853FD0 /* textField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textField@2x.png"; sourceTree = "<group>"; };
+		6FD2E19A17C0254C00A98B64 /* bigButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bigButton@2x.png"; sourceTree = "<group>"; };
 		A829A8B317B2B69C002222D3 /* GitWelcome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitWelcome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A829A8B617B2B69C002222D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A829A8B817B2B69C002222D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,6 +70,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6FC200F417BCA486004BAC6D /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				6FA8F75717C0A4F900853FD0 /* textField@2x.png */,
+				6FD2E19A17C0254C00A98B64 /* bigButton@2x.png */,
+				6F1CAB6917C0133600112422 /* button@2x.png */,
+				6F07D77417BCD1830056DC90 /* background@2x.png */,
+			);
+			path = textures;
+			sourceTree = "<group>";
+		};
 		A829A8AA17B2B69C002222D3 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +111,7 @@
 		A829A8BC17B2B69C002222D3 /* GitWelcome */ = {
 			isa = PBXGroup;
 			children = (
+				6FC200F417BCA486004BAC6D /* textures */,
 				A829A8C517B2B69C002222D3 /* AppDelegate.h */,
 				A829A8C617B2B69C002222D3 /* AppDelegate.m */,
 				A829A8CE17B2B69C002222D3 /* MainStoryboard.storyboard */,
@@ -178,6 +198,10 @@
 				A829A8CB17B2B69C002222D3 /* Default@2x.png in Resources */,
 				A829A8CD17B2B69C002222D3 /* Default-568h@2x.png in Resources */,
 				A829A8D017B2B69C002222D3 /* MainStoryboard.storyboard in Resources */,
+				6F07D77517BCD1830056DC90 /* background@2x.png in Resources */,
+				6F1CAB6A17C0133600112422 /* button@2x.png in Resources */,
+				6FD2E19B17C0254C00A98B64 /* bigButton@2x.png in Resources */,
+				6FA8F75817C0A4F900853FD0 /* textField@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

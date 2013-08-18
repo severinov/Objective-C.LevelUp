@@ -110,7 +110,7 @@
     NSString * string = @"";
     for (ENEntities * element in [_controller.calcModel stackOfOperations])
     {
-        string = [string stringByAppendingString:[element entity]];
+        string = [string stringByAppendingString:[element string]];
     }
     [_fieldText setText:string];
 }

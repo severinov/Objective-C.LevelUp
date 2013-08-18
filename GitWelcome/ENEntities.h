@@ -19,7 +19,7 @@
 
 @interface ENEntities : NSObject
 
-@property NSString * entity;
+@property NSString * string;
 @property int priority;
 
 +(ENEntities *)entityWithString:(NSString *)entity andPriority:(int)priority;

@@ -14,7 +14,7 @@
 +(ENEntities *)entityWithString:(NSString *)string andPriority:(int)priority
 {
     ENEntities * entityTemp = [[ENEntities alloc] init];
-    [entityTemp setEntity:string];
+    [entityTemp setString:string];
     [entityTemp setPriority:priority];
     return entityTemp;
 }
@@ -23,7 +23,7 @@
 {
     self = [super init];
     if (self) {
-        _entity = @"";
+        [self setValue:@"" forKey:@"string"];
         _priority = NONP;
     }
     return self;

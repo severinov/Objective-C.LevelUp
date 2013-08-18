@@ -43,7 +43,7 @@
     }
     
     //определение введенного символа
-    character = [[entity entity] characterAtIndex:0];
+    character = [[entity string] characterAtIndex:0];
     switch (character) {
         case '0':
         case '1':
@@ -184,11 +184,11 @@
             ENEntities * entitieY = [_calcModel entityAtIndexOfResult:i-1];
             operationPosition = i;
 
-            int x = [[entitieX entity] integerValue];
-            int y = [[entitieY entity] integerValue];
+            int x = [[entitieX string] integerValue];
+            int y = [[entitieY string] integerValue];
             NSLog(@"x = %d, y = %d",x,y);
             
-            switch ([[entitieOp entity] characterAtIndex:0]) {
+            switch ([[entitieOp string] characterAtIndex:0]) {
                 case '+':
                     result = x+y;
                     NSLog(@"result = %f", result);
@@ -220,17 +220,15 @@
             [arrayTemp addObject:newEntity];
             
             for (int i = operationPosition+1; i < lengthOfStack; i++) {
-                NSLog(@"!!!");
                 [arrayTemp addObject:[_calcModel entityAtIndexOfResult:i]];
             }
             
 
             [[_calcModel stackOfResult] removeAllObjects];
             _calcModel.stackOfResult = arrayTemp;
-//            NSLog(@"%@", [[_calcModel entityAtIndexOfResult:0] entity]);
             
             for (ENEntities * element in _calcModel.stackOfResult) {
-                NSLog(@"element = %@", [element entity]);
+                NSLog(@"element = %@", [element string]);
             }
             lengthOfStack = [[_calcModel stackOfResult] count];
             if (lengthOfStack>1) {
@@ -238,7 +236,7 @@
             }
         }//if
     }
-    return [[_calcModel entityAtIndexOfResult:0] entity];
+    return [[_calcModel entityAtIndexOfResult:0] string];
 }
 
 

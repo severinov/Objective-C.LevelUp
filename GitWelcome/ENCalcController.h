@@ -12,6 +12,9 @@
 @interface ENCalcController : NSObject
 
 @property BOOL negate;
+//следующая переменная для того, чтобы отслеживать
+//был ли последний добавленый в результирующую строку элемент цифрой
+@property BOOL lastWasDigit;
 @property ENCalcModel * calcModel;
 
 -(void)readInput:(ENEntities *)entity;

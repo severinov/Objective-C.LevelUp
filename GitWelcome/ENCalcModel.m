@@ -49,6 +49,18 @@
     return [_stackOfResult objectAtIndex:index];
 }
 
+//тут происходит слияние точек и чисел
+-(void)addInPreviewCellWithElement:(ENEntities*)entity
+{
+    ENEntities * entityTemp = [ENEntities entityWithString:[(ENEntities *)[_stackOfResult lastObject] string]
+                                               andPriority:[(ENEntities *)[_stackOfResult lastObject] priority]];
+    entity.string = [[entityTemp string] stringByAppendingString:entity.string];
+//    NSLog(@"Count Of entities = %d and string = %@", [_stackOfResult count], entity.string);
+    [_stackOfResult removeLastObject];
+    [_stackOfResult addObject:entity];
+}
+
+
 
 -(void)insertOperation:(ENEntities *)operation atIndex:(NSUInteger)index
 {

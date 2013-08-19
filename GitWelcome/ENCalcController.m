@@ -56,6 +56,7 @@
         
         unichar character;
         int lengthOfOperations = [[_calcModel stackOfOperations] count];
+        int lengthOfResult = [[_calcModel stackOfResult] count];
         
         ENEntities * lastOperation = [[ENEntities alloc] init];
         ENEntities * lastResult = [[ENEntities alloc] init];
@@ -63,10 +64,10 @@
         if (lengthOfOperations != 0) {
             lastOperation = [_calcModel operationAtIndex:(lengthOfOperations-1)];
         }
-        if (lengthOfOperations != 0) {
-            lastResult = [_calcModel operationAtIndex:(lengthOfOperations-1)];
+        if (lengthOfResult != 0) {
+            lastResult = [_calcModel entityAtIndexOfResult:(lengthOfResult-1)];
         }
-            
+        
         //определение введенного символа
         character = [[entity string] characterAtIndex:0];
         switch (character) {
@@ -81,17 +82,36 @@
             case '8':
             case '9':
 //                если предыдущий элемент - цифра, то слить их
+                if ([lastResult priority] == -2 && _lastWasDigit) {
+                    [_calcModel addInPreviewCellWithElement:entity];
+                    _lastWasDigit = YES;
+                    break;
+                }
+                //                если предыдущий элемент "-", то слить их
+                if ([lastResult priority] == LOW) {
+                    [_calcModel addInPreviewCellWithElement:entity];
+                    _lastWasDigit = YES;
+                    break;
+                }
                 [_calcModel addInResult:entity];
+                _lastWasDigit = YES;
+                break;
+            case '.':
+                [_calcModel addInPreviewCellWithElement:entity];
+                _lastWasDigit = YES;
                 break;
             case '(':
                 [_calcModel addOperation:entity];
+                _lastWasDigit = NO;
                 break;
             case ')':
                 //перенести все знаки до "(" в итоговый стек
                 //и удалить ")"
                 [self braceProcessing];
+                _lastWasDigit = NO;
                 break;
             case '+':
+                _lastWasDigit = NO;
                 //переносим все знаки с бОльшим приоритетом и до скобок в результат
                 if ([lastOperation priority] > LOW) {
                     [self operationProcessingWithEntity:entity];
@@ -100,15 +120,32 @@
                 [_calcModel addOperation:entity];
                 break;
             case '-':
-                //            if (lengthOfResult == 0) {return ERR;}
+                //если нет ничего то это негатив
+                if ([lastResult priority] == DON)
+                {
+                    [_calcModel addInResult:entity];
+                    _lastWasDigit = YES;
+                    break;
+                }//if
+                
+                //если до этого была не цифра, то это негатив
+                if (!_lastWasDigit)
+                {
+                    [_calcModel addInResult:entity];
+                    _lastWasDigit = YES;
+                    break;
+                }
+                _lastWasDigit = NO;
                 //переносим все знаки с бОльшим приоритетом и до скобок в результат
-                if ([lastOperation priority] > LOW) {
+                if ([lastOperation priority] > LOW)
+                {
                     [self operationProcessingWithEntity:entity];
                     break;
                 }
                 [_calcModel addOperation:entity];
                 break;
             case '*':
+                _lastWasDigit = NO;
                 //переносим все знаки с бОльшим приоритетом и до скобок в результат
                 if ([lastOperation priority] > NORM) {
                     [self operationProcessingWithEntity:entity];
@@ -117,6 +154,7 @@
                 [_calcModel addOperation:entity];
                 break;
             case '/':
+                _lastWasDigit = NO;
                 //переносим все знаки с бОльшим приоритетом и до скобок в результат
                 if ([lastOperation priority] > NORM) {
                     [self operationProcessingWithEntity:entity];
@@ -125,6 +163,7 @@
                 [_calcModel addOperation:entity];
                 break;
             case '^':
+                _lastWasDigit = NO;
                 [_calcModel addOperation:entity];
                 break;
             default:
@@ -217,9 +256,8 @@
             ENEntities * entitieY = [_calcModel entityAtIndexOfResult:i-1];
             operationPosition = i;
 
-            int x = [[entitieX string] integerValue];
-            int y = [[entitieY string] integerValue];
-            NSLog(@"x = %d, y = %d",x,y);
+            double x = [[entitieX string] doubleValue];
+            double y = [[entitieY string] doubleValue];
             
             switch ([[entitieOp string] characterAtIndex:0]) {
                 case '+':

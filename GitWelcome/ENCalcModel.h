@@ -22,10 +22,13 @@
 -(void)addInResult:(ENEntities *)digit;
 -(void)removeOperationAtIndex:(int)index;
 -(ENEntities *)entityAtIndexOfResult:(NSUInteger)index;
+-(void)addInPreviewCellWithElement:(ENEntities*)entity;
 
 -(void)insertOperation:(ENEntities *)operation atIndex:(NSUInteger)index;
 -(void)addOperation:(ENEntities *)operation;
 -(ENEntities *)operationAtIndex:(NSUInteger)index;
+
+
 
 -(void)fillStringDisplay;
 

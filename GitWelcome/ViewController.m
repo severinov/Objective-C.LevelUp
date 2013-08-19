@@ -248,7 +248,17 @@
             _didOp          = 0;
             _didBraC        = 0;
             _didBraO        = 0;
+            _didDot         = 0;
             _countNegate    = 0;
+            break;
+        case '.':
+            _didDigit       = 0;
+            _didOp          = 0;
+            _didBraC        = 0;
+            _didBraO        = 0;
+            _countNegate    = 0;
+            _didDot         = 1;
+            _countDot++;
             break;
         case '(':
             _didDigit       = 0;
@@ -257,7 +267,7 @@
             _didBraO        = 1;
             _countBraO++;
             _countNegate    = 0;
-            _countDot       = 0;
+            _didDot         = 0;
             break;
         case ')':
             _didDigit       = 0;
@@ -266,7 +276,7 @@
             _didBraO        = 0;
             _countBraO--;
             _countNegate    = 0;
-            _countDot       = 0;
+            _didDot         = 0;
             break;
         case '+':
             _didDigit       = 0;
@@ -275,6 +285,7 @@
             _didBraO        = 0;
             _countNegate    = 0;
             _countDot       = 0;
+            _didDot         = 0;
             break;
         case '-':
             _didDigit       = 0;
@@ -283,6 +294,9 @@
             _didBraC        = 0;
             _didBraO        = 0;
             _countDot       = 0;
+            _didDot         = 0;
+            if ([[[_controller calcModel] stackOfResult] count] == 0) {
+                _didDigit   =1;}
             break;
         case '*':
             _didDigit       = 0;
@@ -291,6 +305,7 @@
             _didBraO        = 0;
             _countNegate    = 0;
             _countDot       = 0;
+            _didDot         = 0;
             break;
         case '/':
             _didDigit       = 0;
@@ -299,6 +314,7 @@
             _didBraO        = 0;
             _countNegate    = 0;
             _countDot       = 0;
+            _didDot         = 0;
             break;
         case '^':
             _didDigit       = 0;
@@ -307,6 +323,7 @@
             _didBraO        = 0;
             _countNegate    = 0;
             _countDot       = 0;
+            _didDot         = 0;
             break;
         case '<':
             //если в модели есть что-то, то отдаем это как нажатую кнопку
@@ -326,6 +343,7 @@
             _countBraO      = 0;
             _countNegate    = 0;
             _countDot       = 0;
+            _didDot         = 0;
             [[_buttonEmpty titleLabel] setText:nil];
             [self buttonPressed:_buttonEmpty];
             break;
@@ -357,7 +375,7 @@
         _buttonEqual.enabled = NO;
     }
     
-    if (_didDigit == 0 && _didBraC == 0) {
+    if (_didDigit + _didBraC + _didDot == 0) {
         _buttonBraO.enabled = YES;
     }else{
         _buttonBraO.enabled = NO;
@@ -375,7 +393,7 @@
         _buttonDot.enabled = NO;
     }
     
-    if (_didOp == 1 && _countNegate >= 2) {
+    if ((_countNegate>=2) | (_didDot > 0)) {
         _buttonSubstract.enabled = NO;
     }else{
         _buttonSubstract.enabled = YES;

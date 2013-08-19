@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#define NONP   -2
 #define ERR    -1
 #define DON     0
 #define BRO     1
@@ -15,7 +16,7 @@
 #define LOW     3
 #define NORM    4
 #define HI      5
-#define NONP   -2
+
 
 @interface ENEntities : NSObject
 

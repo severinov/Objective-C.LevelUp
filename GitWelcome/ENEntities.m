@@ -24,7 +24,7 @@
     self = [super init];
     if (self) {
         _string = @"";
-        _priority = NONP;
+        _priority = DON;
     }
     return self;
 }

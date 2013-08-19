@@ -13,6 +13,7 @@
 
 @property int didDigit;
 @property int didOp;
+@property int didDot;
 @property int didBraC;
 @property int didBraO;
 @property int countBraO;

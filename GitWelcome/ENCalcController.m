@@ -19,6 +19,7 @@
     if (self) {
         _calcModel = [[ENCalcModel alloc] init];
         _negate = YES;
+        _lastWasDigit = NO;
     }
     return self;
 }
@@ -82,13 +83,13 @@
             case '8':
             case '9':
 //                если предыдущий элемент - цифра, то слить их
-                if ([lastResult priority] == -2 && _lastWasDigit) {
+                if (([lastResult priority] == -2) && _lastWasDigit) {
                     [_calcModel addInPreviewCellWithElement:entity];
                     _lastWasDigit = YES;
                     break;
                 }
-                //                если предыдущий элемент "-", то слить их
-                if ([lastResult priority] == LOW) {
+                //если предыдущий элемент "-", то слить их
+                if ([[lastResult string] isEqualToString: @"-"] && _lastWasDigit) {
                     [_calcModel addInPreviewCellWithElement:entity];
                     _lastWasDigit = YES;
                     break;
@@ -233,6 +234,12 @@
 
 -(void)calculate
 {
+//    NSString * str = [NSString string];
+//    for (ENEntities * ent in [_calcModel stackOfResult]) {
+//        str = [str stringByAppendingString:[ent string]];
+//        str = [str stringByAppendingString:@"_"];
+//    }
+//    NSLog(@"%@", str);
     
     int lengthOfStack = [[_calcModel stackOfResult] count];
     
@@ -250,7 +257,7 @@
         
         double result = 0;
 
-        if ([entitieOp priority] != NONP)
+        if ([entitieOp priority] >= LOW)
         {
             ENEntities * entitieX = [_calcModel entityAtIndexOfResult:i-2];
             ENEntities * entitieY = [_calcModel entityAtIndexOfResult:i-1];
@@ -258,6 +265,8 @@
 
             double x = [[entitieX string] doubleValue];
             double y = [[entitieY string] doubleValue];
+            
+//            NSLog(@"oppos = %i x = %f, y = %f",operationPosition, [[[_calcModel entityAtIndexOfResult:i-3] string] doubleValue], y);
             
             switch ([[entitieOp string] characterAtIndex:0]) {
                 case '+':

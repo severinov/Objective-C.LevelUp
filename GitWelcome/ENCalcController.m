@@ -33,6 +33,117 @@
     [_calcModel fillStringDisplay];
 }
 
+-(void)backspace
+{
+    [[_calcModel stackOfInput] removeLastObject];
+    [_calcModel fillStringDisplay];
+}
+
+-(void)clear
+{
+    [[_calcModel stackOfInput] removeAllObjects];
+    [[_calcModel stackOfOperations] removeAllObjects];
+    [[_calcModel stackOfResult] removeAllObjects];
+    [_calcModel fillStringDisplay];
+}
+
+
+
+-(int)makeExpression
+{
+    for (ENEntities * entity in [_calcModel stackOfInput])
+    {
+        
+        unichar character;
+        int lengthOfOperations = [[_calcModel stackOfOperations] count];
+        
+        ENEntities * lastOperation = [[ENEntities alloc] init];
+        ENEntities * lastResult = [[ENEntities alloc] init];
+        
+        if (lengthOfOperations != 0) {
+            lastOperation = [_calcModel operationAtIndex:(lengthOfOperations-1)];
+        }
+        if (lengthOfOperations != 0) {
+            lastResult = [_calcModel operationAtIndex:(lengthOfOperations-1)];
+        }
+            
+        //определение введенного символа
+        character = [[entity string] characterAtIndex:0];
+        switch (character) {
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+//                если предыдущий элемент - цифра, то слить их
+                [_calcModel addInResult:entity];
+                break;
+            case '(':
+                [_calcModel addOperation:entity];
+                break;
+            case ')':
+                //перенести все знаки до "(" в итоговый стек
+                //и удалить ")"
+                [self braceProcessing];
+                break;
+            case '+':
+                //переносим все знаки с бОльшим приоритетом и до скобок в результат
+                if ([lastOperation priority] > LOW) {
+                    [self operationProcessingWithEntity:entity];
+                    break;
+                }
+                [_calcModel addOperation:entity];
+                break;
+            case '-':
+                //            if (lengthOfResult == 0) {return ERR;}
+                //переносим все знаки с бОльшим приоритетом и до скобок в результат
+                if ([lastOperation priority] > LOW) {
+                    [self operationProcessingWithEntity:entity];
+                    break;
+                }
+                [_calcModel addOperation:entity];
+                break;
+            case '*':
+                //переносим все знаки с бОльшим приоритетом и до скобок в результат
+                if ([lastOperation priority] > NORM) {
+                    [self operationProcessingWithEntity:entity];
+                    break;
+                }
+                [_calcModel addOperation:entity];
+                break;
+            case '/':
+                //переносим все знаки с бОльшим приоритетом и до скобок в результат
+                if ([lastOperation priority] > NORM) {
+                    [self operationProcessingWithEntity:entity];
+                    break;
+                }
+                [_calcModel addOperation:entity];
+                break;
+            case '^':
+                [_calcModel addOperation:entity];
+                break;
+            default:
+                return ERR;
+                break;
+        }
+    }//for
+    
+    int lengthOfOperations = [[_calcModel stackOfOperations] count];
+    if (lengthOfOperations > 0) {
+        for (int i = lengthOfOperations - 1; i>=0; i--) {
+            [_calcModel addInResult:[_calcModel operationAtIndex:i]];
+            [_calcModel removeOperationAtIndex:i];
+        }
+    }
+    
+    return DON;
+}
+
 
 
 -(void)operationProcessingWithEntity:(ENEntities*)entity
@@ -58,15 +169,7 @@
 
 
 
--(void)compliteProcessing
-{
-    int lengthOfOperations = [[_calcModel stackOfOperations] count];
-    for (int i = lengthOfOperations - 1; i >= 0; i--)
-    {
-        [_calcModel addInResult:[_calcModel operationAtIndex:i]];
-        [_calcModel removeOperationAtIndex:i];
-    }
-}
+
 
 
 -(void)braceProcessing
@@ -89,12 +192,18 @@
 }
 
 
--(NSString *)calculate
+-(void)calculate
 {
-    NSLog(@"%@", [_calcModel stringDisplay]);
-    return [_calcModel stringDisplay];
     
     int lengthOfStack = [[_calcModel stackOfResult] count];
+    
+    //завершить если нет символов
+    if (lengthOfStack == 0) {
+        //вывести окно сообщения о том, что нечего считать
+        
+        return;
+    }
+    
     for (int i = 1; i<lengthOfStack; i++)
     {
         int operationPosition = 0;
@@ -115,7 +224,6 @@
             switch ([[entitieOp string] characterAtIndex:0]) {
                 case '+':
                     result = x+y;
-                    NSLog(@"result = %f", result);
                     break;
                 case '-':
                     result = x-y;
@@ -125,7 +233,6 @@
                     break;
                 case '/':
                     result = (double)x/(double)y;
-                    NSLog(@"result = %f", result);
                     break;
                 case '^':
                     result = pow(x, y);
@@ -147,126 +254,21 @@
                 [arrayTemp addObject:[_calcModel entityAtIndexOfResult:i]];
             }
             
-
             [[_calcModel stackOfResult] removeAllObjects];
             _calcModel.stackOfResult = arrayTemp;
             
-            for (ENEntities * element in _calcModel.stackOfResult) {
-                NSLog(@"element = %@", [element string]);
-            }
             lengthOfStack = [[_calcModel stackOfResult] count];
             if (lengthOfStack>1) {
                 i=1;
             }
         }//if
-    }
-    return [[_calcModel entityAtIndexOfResult:0] string];
-}
-
-
-
-//
-////функция чтения сроки и формирования
-////итоговой строки
-//-(int)readInput:(ENEntities *)entity
-//{
-//    unichar character;
-//    int lengthOfOperations = [[_calcModel stackOfOperations] count];
-//    int lengthOfResult = [[_calcModel stackOfResult] count];
-//    
-//    ENEntities * lastOperation = [[ENEntities alloc] init];
-//    ENEntities * lastResult = [[ENEntities alloc] init];
-//    if (lengthOfOperations != 0) {
-//        lastOperation = [_calcModel operationAtIndex:(lengthOfOperations-1)];
-//    }
-//    if (lengthOfOperations != 0) {
-//        lastResult = [_calcModel operationAtIndex:(lengthOfOperations-1)];
-//    }
-//    
-//    //определение введенного символа
-//    character = [[entity string] characterAtIndex:0];
-//    switch (character) {
-//        case '0':
-//        case '1':
-//        case '2':
-//        case '3':
-//        case '4':
-//        case '5':
-//        case '6':
-//        case '7':
-//        case '8':
-//        case '9':
-//            [_calcModel addInResult:entity];
-//            break;
-//        case '(':
-//            [_calcModel addOperation:entity];
-//            break;
-//        case ')':
-//            //перенести все знаки до "(" в итоговый стек
-//            //и удалить ")"
-//            [self braceProcessing];
-//            break;
-//        case '+':
-//            if (lengthOfResult == 0) {return ERR;}
-//            //переносим все знаки с бОльшим приоритетом и до скобок в результат
-//            if ([lastOperation priority] > LOW) {
-//                [self operationProcessingWithEntity:entity];
-//                break;
-//            }
-//            [_calcModel addOperation:entity];
-//            break;
-//        case '-':
-//            //            if (lengthOfResult == 0) {return ERR;}
-//            //переносим все знаки с бОльшим приоритетом и до скобок в результат
-//            if ([lastOperation priority] > LOW) {
-//                [self operationProcessingWithEntity:entity];
-//                break;
-//            }
-//            [_calcModel addOperation:entity];
-//            break;
-//        case '*':
-//            if (lengthOfResult == 0) {return ERR;}
-//            //переносим все знаки с бОльшим приоритетом и до скобок в результат
-//            if ([lastOperation priority] > NORM) {
-//                [self operationProcessingWithEntity:entity];
-//                break;
-//            }
-//            [_calcModel addOperation:entity];
-//            break;
-//        case '/':
-//            if (lengthOfResult == 0) {return ERR;}
-//            //переносим все знаки с бОльшим приоритетом и до скобок в результат
-//            if ([lastOperation priority] > NORM) {
-//                [self operationProcessingWithEntity:entity];
-//                break;
-//            }
-//            [_calcModel addOperation:entity];
-//            break;
-//        case '^':
-//            if (lengthOfResult == 0) {return ERR;}
-//            [_calcModel addOperation:entity];
-//            break;
-//        default:
-//            return ERR;
-//            break;
-//    }
-//    return DON;
-//}
-
-
--(void)backspace
-{
-    [[_calcModel stackOfInput] removeLastObject];
-    [_calcModel fillStringDisplay];
-}
-
--(void)clear
-{
+    }//for
+    
     [[_calcModel stackOfInput] removeAllObjects];
-    [[_calcModel stackOfOperations] removeAllObjects];
-    [[_calcModel stackOfResult] removeAllObjects];
+    [[_calcModel stackOfInput] addObject:[_calcModel entityAtIndexOfResult:0]];
     [_calcModel fillStringDisplay];
 }
+
 
 
 

@@ -17,8 +17,8 @@
 -(void)readInput:(ENEntities *)entity;
 -(void)operationProcessingWithEntity:(ENEntities*)entity;
 -(void)braceProcessing;
--(void)compliteProcessing;
--(NSString*)calculate;
+-(int)makeExpression;
+-(void)calculate;
 -(void)backspace;
 -(void)clear;
 

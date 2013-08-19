@@ -371,12 +371,33 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="buttonAdd" destination="blT-rV-Q5I" id="wVn-4S-FmF"/>
+                        <outlet property="buttonBackspace" destination="wne-W3-Lg9" id="xNt-Wm-WpQ"/>
+                        <outlet property="buttonBraC" destination="lkw-ci-O57" id="UwI-L1-tNc"/>
+                        <outlet property="buttonBraO" destination="d28-8e-iyR" id="vEX-sJ-nb3"/>
+                        <outlet property="buttonClear" destination="cQ2-2n-lbo" id="wLY-kf-Pvd"/>
+                        <outlet property="buttonDivide" destination="2nB-Aj-6te" id="KZQ-Nw-jds"/>
+                        <outlet property="buttonDot" destination="Xe4-q2-hmM" id="lDW-t6-f9N"/>
+                        <outlet property="buttonEight" destination="cDm-m4-EXz" id="7th-2a-VRk"/>
+                        <outlet property="buttonEqual" destination="7hm-rg-fZp" id="X8O-3e-Uqz"/>
+                        <outlet property="buttonFive" destination="AMA-cq-Vst" id="iDi-cg-pYw"/>
+                        <outlet property="buttonFour" destination="VAe-Hg-soI" id="usI-Ah-DRp"/>
+                        <outlet property="buttonMultiply" destination="tn2-ng-aSw" id="Wtc-O5-HIj"/>
+                        <outlet property="buttonNine" destination="ZgE-2f-Ckq" id="p6c-qK-VxG"/>
+                        <outlet property="buttonOne" destination="YQA-wf-5Bn" id="b3E-Oc-8jH"/>
+                        <outlet property="buttonPower" destination="uRn-kN-d3U" id="wkI-UL-PGk"/>
+                        <outlet property="buttonSeven" destination="4pk-Dc-V6h" id="aCq-HB-rh0"/>
+                        <outlet property="buttonSix" destination="esA-OR-BcL" id="o3w-fn-toy"/>
+                        <outlet property="buttonSubstract" destination="WAC-8T-52s" id="8oE-S1-D41"/>
+                        <outlet property="buttonThree" destination="5Yz-sg-JO1" id="Wmz-D8-hBg"/>
+                        <outlet property="buttonTwo" destination="Dy6-qJ-jPQ" id="lnO-Tf-uYL"/>
+                        <outlet property="buttonZero" destination="6DZ-wz-TEg" id="RXv-ce-Dey"/>
                         <outlet property="fieldText" destination="J4a-x0-xrW" id="StT-aO-VsS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="73"/>
+            <point key="canvasLocation" x="-347" y="77"/>
         </scene>
     </scenes>
     <resources>
@@ -410,6 +431,27 @@
                 <relationship kind="action" name="buttonThree:"/>
                 <relationship kind="action" name="buttonTwo:"/>
                 <relationship kind="action" name="buttonZero:"/>
+                <relationship kind="outlet" name="buttonAdd" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonBackspace" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonBraC" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonBraO" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonClear" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonDivide" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonDot" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonEight" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonEqual" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonFive" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonMultiply" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonNine" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonPower" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonSeven" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonSix" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonSubstract" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonZero" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fieldText" candidateClass="UITextField"/>
             </relationships>
         </class>
